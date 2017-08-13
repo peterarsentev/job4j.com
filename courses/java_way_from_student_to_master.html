@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+
+    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/modern-business.css" rel="stylesheet">
+
+    <link href="../css/job4j.css" rel="stylesheet">
+
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/job4j.js?v=31052017"></script>
+    <script>
+        $(function () {
+            CONTEXT = '../';
+            $("#header").load(
+                    CONTEXT + "header.html?v=31052017",
+                    function() {
+                        initHeader();
+                        loadUser();
+                    }
+            );
+            $("#footer").load("../footer.html?v=31052017");
+            $("#courses").load("courses.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div id="header"></div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Java. Путь от ученика до эксперта
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="../index.html">Главная</a>
+                    </li>
+                    <li class="active">Курсы</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <p>
+                    Всем привет. Меня зовут Петр. Я &ndash; Java-разработчик с опытом работы более 6 лет.
+                    Я знаю, как сложно освоить новый язык или технологию.
+                    Когда человек начинает изучать Java, первое, с чем он сталкивается, &ndash; это огромное количество технологий, фреймворков и библиотек. В этом разнообразии немудрено потеряться, поэтому новичок не знает, с чего ему начать. Создается впечатление, что порог вхождения в Java-программисты очень высок. <br/>
+                    Данным курсом я хочу показать обратное.
+                    За пару месяцев интенсивного обучения вы овладеете достаточными знаниями для устройства на работу, прохождения собеседования и выполнения требуемых задач на работе. Особо хотел бы отметить, что это <strong>практический курс</strong>, поэтому важную роль играет выполнение всех заданий на каждом занятии.
+                    Только тогда будет положительный результат.
+                </p>
+                <p>Полный видеокурс доступен по <a target="_blank" href="http://www.youtube.com/channel/UCLUYG3J5lYXs9gwz98aXIsQ">ссылке</a>.</p>
+                <p><strong>Лучшие работы учеников:</strong> <a target="_blank" href="https://github.com/Panchenko-Vlad/java-lessons/tree/master/ClinicPetWeb">Panchenko Vlad</a>,
+                    <a target="_blank" href="https://github.com/Bikmop/Java_study/tree/master/Lesson15">Victor Kotlyar</a>
+                </p>
+                <p>
+                    <strong>План курса</strong>
+                </p>
+                <ul>
+                    <li>Понятие JVM. Типы данных</li>
+                    <li>Синтаксис языка. Классы. Объекты. Условия. Циклы. Массивы</li>
+                    <li>Наследование. Инкапсуляция. Полиморфизм</li>
+                    <li>Коллекции. List, Set, Map, Tree</li>
+                    <li>Инструменты сборки. Хранение кода. Maven, Git</li>
+                    <li>Базовые понятия клиент-серверных приложений. Протоколы передачи</li>
+                    <li>Обработка http-запросов в Java. Servlets. JSP</li>
+                    <li>Основы HTML, CSS, JS</li>
+                    <li>Реализация MVC через Servlets. JSP</li>
+                    <li>Работа с базой данных. JDBC</li>
+                    <li>Базовый синтаксис SQL</li>
+                    <li>Использование POJO в работе с базами данных. ORM</li>
+                    <li>Hibernate, Mapping</li>
+                    <li>Hibernate, CRUD</li>
+                    <li>HQL</li>
+                    <li>Spring IoC</li>
+                    <li>Spring Template + Hibernate</li>
+                    <li>Spring MVC</li>
+                </ul>
+
+                <strong>Занятие 1. Вводная часть</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=3Wn_mc12_yA">Видео</a><br/>
+
+                Постановка цели:
+                <ul>
+                    <li>Какова ваша цель изучения языка Java?</li>
+                    <li>Как вы можете понять, что цель достигнута?</li>
+                    <li>Какой срок реализации вашей цели?</li>
+                </ul>
+
+                <strong>Занятие 2. Инструменты разработки</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=lyezCD0lW88">Видео</a>
+                <ul>
+                    <li><a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">JDK 1.7</a></li>
+                    <li><a target="_blank" href="https://maven.apache.org/download.cgi?Preferred=ftp://mirror.reverse.net/pub/apache/">Maven</a></li>
+                    <li><a target="_blank" href="https://tomcat.apache.org/download-70.cgi">Tomcat</a></li>
+                    <li><a target="_blank" href="https://msysgit.github.io/">MsysGit</a></li>
+                    <li><a target="_blank" href="http://www.postgresql.org/download/">PostgreSQL</a></li>
+                    <li><a target="_blank" href="https://www.jetbrains.com/idea/">IDEA</a></li>
+                </ul>
+
+                Задания:<br/>
+
+                <ul>
+                    <li>Установить все пакеты на своем компьютере.</li>
+                    <li>Прописать необходимые переменные окружения.</li>
+                    <li>Проверить работоспособность каждого элемента из списка.</li>
+                </ul>
+
+                <strong>Занятие 3. Типы</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=gpZTcUBbdUA">Видео 1 часть</a><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=_UM8_vQZ4Tk">Видео 2 часть</a><br/>
+
+                <a target="_blank" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">Детальное описание</a><br/><br/>
+
+                Задания:
+                <ul>
+                    <li>Создать класс Calculate.</li>
+                    <li>Добавить арифметические вычисления + - * / ^</li>
+                    <li>Сделать его адаптивным для типов int, short, long, float, double.</li>
+                </ul>
+
+                <strong>Занятие 4. Классы. Объекты, Циклы, Условия</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=EtBO3V-A-os">Видео</a><br/>
+
+                Дополнительная информация:
+                <ul>
+                    <li><a target="_blank" href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html">while и do-while</a></li>
+                    <li><a target="_blank" href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html">if-then и if-then-else</a></li>
+                </ul>
+
+                Задания:
+                <ul>
+                    <li>Создать класс Calculator.</li>
+                    <li>Добавить два класса клиента ArgRunner и InteractRunner. ArgRunner: данные берутся из параметров запуска программы. InteractRunner: данные вводит пользователь.</li>
+                    <li>Добавить возможность выборки операции, валидацию, повторное использование результата вычисления.</li>
+                </ul>
+
+                <strong>Занятие 5. Оформление кода</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=O_vgImIw-pE">Видео</a><br/>
+
+                <a target="_blank" href="http://www.oracle.com/technetwork/articles/java/index-137868.html">Детальное описание</a><br/>
+
+                Задания:
+                <ul>
+                    <li>Проверить весь проект по пунктам из занятия.</li>
+                    <li>Поправить нарушения этих правил.</li>
+                </ul>
+
+                <strong>Занятие 6. Наследование. Инкапсуляция. Полиморфизм</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=8jiiWwyHRY4">Видео</a><br/>
+
+                Дополнительная информация:
+                <ul>
+                    <li><a target="_blank" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Наследование</a></li>
+                    <li><a target="_blank" href="https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html">Полиморфизм</a></li>
+                </ul>
+
+                Задание:<br/>
+                Создать программу для обслуживания клиники домашних питомцев. Должны быть реализованы возможности:
+                <ul>
+                    <li>Добавление клиентов</li>
+                    <li>Указание, какой питомец есть у клиента</li>
+                    <li>Поиск по кличке питомца, по имени клиента</li>
+                    <li>Редактирование имени клиента, имени питомца</li>
+                    <li>Удаление клиента, питомца</li>
+                    <li>Валидация</li>
+                </ul>
+
+                <strong>Занятие 7. Подключение Maven, IDEA, JUnit</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=rTvOSS99-y8">Видео</a><br/>
+
+                Дополнительная информация:
+                <ul>
+                    <li><a target="_blank" href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven</a></li>
+                    <li><a target="_blank" href="https://www.jetbrains.com/idea/features/ant_maven.html">IDEA</a></li>
+                    <li><a target="_blank" href="http://junit.org/">JUnit</a></li>
+                    <li><a target="_blank" href="http://en.wikipedia.org/wiki/Black-box_testing">Метод черного ящика</a></li>
+                </ul>
+
+                Задания:
+                <ul>
+                    <li>Добавить Мaven для проектов "Клиника домашних животных" и "Калькулятор".</li>
+                    <li>Добавить тесты в эти проекты.</li>
+                </ul>
+
+                <strong>Занятие 8. Исключительные ситуации. Exception, Error</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=GgXXwDlhTKw">Видео</a><br/>
+
+                <a target="_blank" href="https://docs.oracle.com/javase/tutorial/essential/exceptions">Дополнительная информация</a><br/>
+
+                Задания:
+                <ul>
+                    <li>Заменить сообщения о нарушении логики в приложении на пробрасывание исключительных ситуаций.</li>
+                    <li>Добавить тесты, которые проверяют эти исключения.</li>
+                </ul>
+
+                <strong>Занятие 9. Создание исполняемого файла. Manifest</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=X5eI5OhRWis">Видео</a><br/>
+
+                Дополнительная информация:
+
+                <ul>
+                    <li><a target="_blank" href="https://maven.apache.org/plugins/maven-jar-plugin/examples/manifest-customization.html">Manifest customization</a></li>
+                    <li><a target="_blank" href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html">Working with Manifest Files: The Basics</a></li>
+                </ul>
+
+                Задания:
+                <ul>
+                    <li>Сделать программу "Клиника" исполняемой.</li>
+                    <li>Добавить файл README.md и описать в нем назначение программы и ее возможности.</li>
+                    <li>Попросить своих друзей попробовать использование программы.</li>
+                    <li>Получить впечатления и отзывы друзей. Провести работу над ошибками.</li>
+                </ul>
+
+                <strong>Занятие 10. Коллекции. List, Set, Map, Tree</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=toaYofpHwUg">Видео</a><br/>
+
+                <a target="_blank" href="ftp://ftp.fixme.ch/free_for_all/Ebook/IT%20eBooks/Software%20Engineering/System%20&%20Scientific/Java/Java%20Generics%20and%20Collections/Java%20Generics%20and%20Collections.pdf">Книга</a><br/>
+                Задания:
+                <ul>
+                    <li>Создать свою реализацию коллекций ArrayList на базе массива.</li>
+                    <li>Создать свою реализацию LinkedList на базе связанных списков.</li>
+                    <li>Заменить массивы в проекте "Клиника" на вашу реализацию.</li>
+                </ul>
+
+                <strong>Занятие 11. Коллекции. Equals. hashCode</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=e9U_GBrwtvQ">Видео</a><br/>
+
+                <a target="_blank" href="http://uet.vnu.edu.vn/~chauttm/e-books/java/Effective.Java.2nd.Edition.May.2008.3000th.Release.pdf">Дополнительная информация</a><br/>
+
+                Задания:
+                <ul>
+                    <li>Создать класс "пользователь".</li>
+                    <li>Провести эксперимент с коллекциями ArrayList, HashSet, HashMap.</li>
+                    <li>Перекрыть equals, hashCode.</li>
+                    <li>Перекрыть только equals.</li>
+                    <li>Перекрыть только hashCode.</li>
+                    <li>Не перекрывать.</li>
+                    <li>Объяснить результаты работы коллекций, методов contains, add, size, put.</li>
+                </ul>
+
+                <strong>Занятие 12. Многопоточность</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=rlajofdMnhw">Видео</a><br/>
+
+                <a target="_blank" href="https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Реализовать эмуляцию клиентов и администратора в проекте "Клиника".<br/>
+                <br/>
+                <strong>Занятие 13. GUI. Игра "Сапер"</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=6pwM3p2pbic">Видео</a><br/>
+                <a target="_blank" href="http://docs.oracle.com/javase/tutorial/uiswing/">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+                Завершить создание игры "Сапер", реализованной на основе Swing.<br/><br/>
+
+                <strong>Занятие 14. Клиент-сервер. Протоколы передачи</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=6tg-82cdDWE">Видео</a><br/>
+
+                Дополнительная информация:
+                <ul>
+                    <li><a target="_blank" href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">Client–server model</a></li>
+                    <li><a target="_blank" href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Hypertext Transfer Protocol</a></li>
+                </ul>
+
+                Задания:
+                <ul>
+                    <li>Расширить модель User.</li>
+                    <li>Реализовать возможность поиска.</li>
+                </ul>
+
+                <strong>Занятие 15. JSP, Servlet, JSTL</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=yGeDFoUjmbo">Видео</a><br/>
+                <a target="_blank" href="http://www.oracle.com/technetwork/articles/java/servlets-jsp-140445.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+                Реализовать проект "Клиника" в виде web-приложения.
+
+                <br/>
+                <br/>
+                <strong>Занятие 16. Тестирование Servlet. Mockito</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=CiPhTanChr8">Видео</a><br/>
+
+                <a target="_blank" href="https://code.google.com/p/mockito/">Дополнительная информация</a><br/>
+
+                Задания:
+                <ul>
+                    <li>Добавить тестирование сервлетов.</li>
+                    <li>Добиться площади покрытия более 80%.</li>
+                </ul>
+
+                <strong>Занятие 17. HTML, CSS, JS</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=UTU-vsDR_tU">Видео</a><br/>
+
+                <a target="_blank" href="http://www.w3schools.com/html/">Дополнительная информация</a><br/>
+
+                Задания:
+                <ul>
+                    <li>Добавить стили.</li>
+                    <li>Добавить валидацию за счет JS.</li>
+                    <li>Добавить разнообразные формы.</li>
+                </ul>
+
+                <strong>Занятие 18. SQL</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=Pzkv4CYKPDg">Видео</a><br/>
+
+                <a target="_blank" href="http://www.postgresqltutorial.com/">Дополнительная информация</a><br/>
+
+                Задания:
+                <ul>
+                    <li>Создать структуры базы данных для хранения данных клиники.</li>
+                    <li>Создать записи для клиентов, питомцев.</li>
+                    <li>Отредактировать записи для клиентов, питомцев.</li>
+                    <li>Удалить записи для клиентов, питомцев.</li>
+                    <li>Получение записей о клиентах, питомцах.</li>
+                </ul>
+
+                <strong>Занятие 19. JDBC</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=T60lPwMCq7c">Видео</a><br/>
+
+                <a target="_blank" href="http://docs.oracle.com/javase/tutorial/jdbc/">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Заменить хранение данных в клиенте на хранение в базе через JDBC.<br/>
+                <br/>
+                <strong>Занятие 20. Hibernate, Config</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=_wsN58yk_WE">Видео</a><br/>
+
+                <a target="_blank" href="https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/session-configuration.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Создать новый тип хранилища не основе Hibernate.<br/>
+                <br/>
+                <strong>Занятие 21. Hibernate, Mapping</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=ZhRt5fwEi0s">Видео</a><br/>
+
+                <a target="_blank" href="https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/persistent-classes.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Добавить связи в моделях клиники.<br/>
+                <br/>
+                <strong>Занятие 22. Hibernate, Query</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=2faPicW-xbg">Видео</a><br/>
+
+                <a target="_blank" href="https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/collections.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Добавить сложные поисковые запросы в клинику через Hibernate Query.<br/>
+                <br/>
+                <strong>Занятие 23. Spring, IoC</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=m5RPXecCOlo">Видео</a><br/>
+
+                <a target="_blank" href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Реализовать dbtool, используя Spring IoC.<br/>
+                <br/>
+                <strong>Занятие 24. Spring Template, Hibernate</strong><br/><br/>
+
+                <a target="_blank" href="https://www.youtube.com/watch?v=XuK0bC3cl_w">Видео</a><br/>
+
+                <a target="_blank" href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/classic-spring.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Сделать интеграцию Spring и Hibernate.<br/>
+                <br/>
+                <strong>Занятие 25. Spring MVC</strong><br/><br/>
+
+                <a target="_blank" href="https://www.youtube.com/watch?v=gU-oZv8FZ4Q">Видео</a><br/>
+
+                <a target="_blank" href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Реализовать MVC через Spring.<br/>
+                <br/>
+                <strong>Занятие 26. Spring Security</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=NxSK0pR_Qhc">Видео</a><br/>
+
+                <a target="_blank" href="http://projects.spring.io/spring-security/">Дополнительная информация</a><br/>
+
+                Задание:<br/>
+
+                Добавить прослойку проверки авторизации и аутентификации.<br/>
+                <br/>
+                <strong>Занятие 27. Заключение</strong><br/><br/>
+
+                <a target="_blank" href="http://www.youtube.com/watch?v=suWXTXSvmuE">Видео</a><br/>
+
+                Задание:<br/>
+
+                Создать проект "Клиника домашних животных", используя все технологии, указанные в проекте.<br/>
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+                <div id="courses"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

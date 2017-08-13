@@ -1,0 +1,32 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{template.subject}} | {{ template.key }}
+            </div>
+            <div class="panel-body">
+                <textarea class="form-control" rows="10" disabled>{{template.body}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Отправить</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="usr">Пользователь:</label>
+                    <input type="text" class="form-control" id="name" ng-model="user.id" required>
+                </div>
+                <div class="form-group">
+                    <label for="usr">Почта:</label>
+                    <input type="text" class="form-control" id="name" ng-model="user.email" required>
+                </div>
+                <a ng-href="#/exam/view/{{exam.id}}" class="btn btn-default">Назад</a>
+                <button class="btn btn-default pull-right" ng-click="send(user)">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row" ng-hide="loaded">
+    <div class="col-md-2 col-md-offset-5">
+        <div class='uil-ripple-css' style='transform:scale(0.54);'><div></div><div></div></div>
+    </div>
+</div>
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <table class="table forum table-striped">
+            <thead>
+            <tr>
+                <th>
+                    <h3>Пройденные интерью</h3>
+                </th>
+                <th>Результат</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="interview in interviews">
+                <td>
+                    <h4>
+                        <a ng-href="#/interview/{{interview.vacancy.id}}">
+                            {{ interview.vacancy.name }}
+                        </a>
+                        <br>
+                        <small>
+                            {{ interview.vacancy.company }}.
+                            {{ interview.vacancy.location }}.
+                            {{ interview.vacancy.rate }}.
+                            {{ interview.vacancy.experience }}.
+                        </small>
+                    </h4>
+                </td>
+                <td>
+                    {{ toName(interview.result) }} &nbsp;|&nbsp;
+                    {{ interview.start | date: 'dd.MM.yyyy'}} -
+                    <span ng-show="candidate.interview.finish">
+                                    {{ interview.finish | date: 'dd.MM.yyyy'}}
+                                </span>
+                    <span ng-hide="candidate.interview.finish">
+                                    не завершен
+                                </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

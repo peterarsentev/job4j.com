@@ -1,0 +1,38 @@
+<div class="row" ng-hide="loaded">
+    <div class="col-md-2 col-md-offset-5">
+        <div class='uil-ripple-css' style='transform:scale(0.54);'><div></div><div></div></div>
+    </div>
+</div>
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <table class="table forum table-striped">
+            <thead>
+            <tr>
+                <th>
+                    <h3>Вакансии</h3>
+                </th>
+                <th class="cell-stat text-center hidden-xs hidden-sm">Опубликован</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="vacancy in vacancies">
+                <td>
+                    <h4>
+                        <a ng-href="#/interview/{{vacancy.id}}">
+                            {{ vacancy.name }}
+                        </a>
+                        <br>
+                        <small>
+                            {{ vacancy.company }}.
+                            {{ vacancy.location }}.
+                            {{ vacancy.rateFrom }} - {{ vacancy.rateTo }} {{ vacancy.currency }}.
+                            {{ vacancy.experience }}.
+                        </small>
+                    </h4>
+                </td>
+                <td class="text-center">{{ vacancy.published | date: 'dd.MM.yyyy'}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

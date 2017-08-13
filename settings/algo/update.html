@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="usr">Название:</label>
+                    <input type="text" class="form-control" id="name" ng-model="algo.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="usr">Сложность от 0 до 10:</label>
+                    <input type="number" class="form-control" id="name" ng-model="algo.level" required>
+                </div>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="algo.published" required> Опубликовать
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Описание:</label>
+                    <textarea class="form-control" rows="20" id="description" ng-model="algo.desription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="usr">Имя исходника:</label>
+                    <input type="text" class="form-control" id="name" ng-model="algo.sname" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Каркас:</label>
+                    <textarea class="form-control" rows="20" id="source" ng-model="algo.source" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="usr">Имя теста:</label>
+                    <input type="text" class="form-control" id="name" ng-model="algo.tname" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Тест:</label>
+                    <textarea class="form-control" rows="20" id="test" ng-model="algo.test" required></textarea>
+                </div>
+                <a ng-href="#/algo/{{id}}" class="btn btn-default" ng-show="id">Назад</a>
+                <a ng-href="#/algos" class="btn btn-default" ng-hide="id">Назад</a>
+                <button class="btn btn-default pull-right" ng-click="save(algo)">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="row" ng-hide="loaded">
+    <div class="col-md-2 col-md-offset-5">
+        <div class='uil-ripple-css' style='transform:scale(0.54);'><div></div><div></div></div>
+    </div>
+</div>
+
+<div class="alert alert-danger" ng-show="error">
+    <strong>Ошибка!</strong> Вы пытаетесь выполнить запрещенное или несуществующее действие.
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{percent}}%">
+                {{ current }} \ {{ total }}
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ current }}. {{html(question.name)}}
+            </div>
+            <div class="panel-body">
+                <div data-ng-bind-html="html(question.description)"></div>
+                <div class="checkbox" ng-repeat="(key, option) in options">
+                    <label>
+                        <input type="checkbox" ng-false-value="" ng-checked="aopts[key]"
+                               ng-true-value="{{option.id}}" ng-change="change()" ng-model="answers[key]">
+                        {{option.description}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12 pull-right">
+        <button ng-click="back()" ng-hide="start" class="btn btn-default">Назад</button>
+        <button ng-click="next()" class="btn btn-success pull-right" ng-show="finish" ng-disabled="!choose">Завершить</button>
+        <button ng-click="next()" class="btn btn-success pull-right" ng-hide="finish" ng-disabled="!choose">Далее</button>
+    </div>
+</div>

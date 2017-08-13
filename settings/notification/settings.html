@@ -1,0 +1,33 @@
+<div class="row" ng-show="isAdmin">
+    <div class="col-md-12">
+        <a href="#/notifications" class="btn btn-default">Шаблоны</a>
+        <a href="#/notifications/settings/update" class="btn btn-default pull-right">Добавить настройку</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Ключ</th>
+                <th>Значение</th>
+                <th ng-show="isAdmin">Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="setting in settings">
+                <td>{{ setting.key }}</td>
+                <td>{{ setting.value }}</td>
+                <td ng-show="isAdmin">
+                    <a ng-href="#/notifications/settings/update/{{setting.id}}" class="btn btn-link">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <button class="btn btn-link" ng-click="delete(exam)">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

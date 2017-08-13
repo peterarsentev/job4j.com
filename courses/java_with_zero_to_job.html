@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+
+    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/modern-business.css" rel="stylesheet">
+
+    <link href="../css/job4j.css" rel="stylesheet">
+
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/job4j.js?v=31052017"></script>
+    <script>
+        $(function () {
+            CONTEXT = '../';
+            $("#header").load(
+                CONTEXT + "header.html?v=31052017",
+                function() {
+                    initHeader();
+                    loadUser();
+                }
+            );
+            $("#footer").load("../footer.html?v=31052017");
+            $("#courses").load("courses.html");
+        });
+    </script>
+    <style>
+        .anchor {
+            display: block;
+            height: 100px; /*same height as header*/
+            margin-top: -100px; /*same height as header*/
+            visibility: hidden;
+        }
+
+        .nav-tabs {
+            border-bottom: 2px solid #DDD;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            border-width: 0;
+        }
+
+        .nav-tabs > li > a {
+            border: none;
+            color: #666;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+            border: none;
+            color: #4285F4 !important;
+            background: transparent;
+        }
+
+        .nav-tabs > li > a::after {
+            content: "";
+            background: #4285F4;
+            height: 2px;
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            bottom: -1px;
+            transition: all 250ms ease 0s;
+            transform: scale(0);
+        }
+
+        .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after {
+            transform: scale(1);
+        }
+
+        .tab-nav > li > a::after {
+            background: #21527d none repeat scroll 0% 0%;
+            color: #fff;
+        }
+
+        .tab-pane {
+            padding: 15px 0;
+        }
+
+        .tab-content {
+            padding: 20px
+        }
+
+        .panel-heading.panel-darkerblue {
+            background: #7bc3d1;
+            color: white;
+        }
+
+        .panel-footer.panel-darkerblue {
+            background: #7bc3d1;
+            color: white;
+        }
+
+        /*.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }*/
+        .table tbody > tr > td.vert-align {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div id="header"></div>
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom"
+     style="margin-top: 50px;background-color: #FFFFFF; border-color: #FFFFFF; z-index: 1" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#about">О курсе</a></li>
+                        <li role="presentation"><a href="#packet">Пакеты обучения</a></li>
+                        <li role="presentation"><a href="#level">Уровень слушателя</a></li>
+                        <li role="presentation"><a href="#process">Как проходит</a></li>
+                        <li role="presentation"><a href="#price">Время прохождения</a></li>
+                        <li role="presentation"><a href="#discount">Скидки и бонусы</a></li>
+                        <li role="presentation"><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Page Content -->
+<div class="container" style="margin-top: 40px;">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                С нуля до трудоустройства, Java SE + EE
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Главная</a>
+                </li>
+                <li class="active">Курсы</li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-lg-8">
+            <span class="anchor" id="about"></span>
+            <h3>О курсе</h3>
+            Основная задача курса - это научить слушателей теоретическим знаниям
+            и практическим навыкам разработки на языке Java, необходимых
+            для <strong>трудоустройства Java программистом</strong>.<br/>
+            Основной упор в курсе делается на <strong>практическую часть</strong>.
+            Каждое задание проверяется <strong>лично наставником</strong>.
+            <br/> <br/>
+            Курс построен на модульной системе, в каждый модуль входит:
+            <ul>
+                <li>Практические задания для закрепления материала</li>
+                <li>Сдача теории по пройденному материалу навставнику в устной форме</li>
+                <li>Решение тестовых заданий с собеседований</li>
+                <li>Видеоматериалы</li>
+                <li>Методические пособия</li>
+            </ul>
+            Также, в конце курса вас ожидает финальный проект содержащий все библиотеки и фреймворки указанные в курсе.
+            <br/>
+            <br/>
+        </div>
+
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+            <div id="courses"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <span class="anchor" id="packet"></span>
+            <h3>Пакеты обучения</h3>
+            <br/>
+
+            <!-- Package Start -->
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4 align="center">Пакет "Старт" - 5870 руб.</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Инструменты
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Maven, Gradle</li>
+                                        <li>jUnit</li>
+                                        <li>Git</li>
+                                        <li>IntelliJ Idea</li>
+                                        <li>Tomcat, JBoss EAP</li>
+                                        <li>PostgreSQL</li>
+                                        <li>ActiveMQ (JMS)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>Синтаксис языка</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>JVM</li>
+                                        <li>Типы данных</li>
+                                        <li>Операторы условия</li>
+                                        <li>Циклы</li>
+                                        <li>Массивы</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>ООП</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Наследование</li>
+                                        <li>Инкапсуляция</li>
+                                        <li>Полиморфизм</li>
+                                        <li>Внутренние класы</li>
+                                        <li>Абстрактные классы</li>
+                                        <li>Исключения</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>Коллекции Lite</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Collections Framework</li>
+                                        <li>ArrayList</li>
+                                        <li>Сортировка</li>
+                                        <li>Обобщения</li>
+                                        <li>Коллекции List, Set, Map</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Standard -->
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 align="center">Пакет "Стандарт" - 11950 руб.</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>Коллекции Pro</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Параметризованные типы, Wildcard</li>
+                                        <li>Итераторы</li>
+                                        <li>Внутреннее устройство:</li>
+                                        <ul>
+                                            <li>Коллекции List</li>
+                                            <li>Коллекции Stack, Queue</li>
+                                            <li>Коллекции Set</li>
+                                            <li>Коллекции Map</li>
+                                            <li>Структуры Tree</li>
+                                        </ul>
+                                        <li>Hashcode, equals</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Многопоточность
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Синхронные и асинхронные операции</li>
+                                        <li>Синхронизация ресурсов</li>
+                                        <li>JMM</li>
+                                        <li>Низкоуровневые блокировки</li>
+                                        <li>Неблокирующие алгоритмы</li>
+                                        <li>Потокобезопасные коллекции</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        SQl, JDBC
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Общие сведения о базах данных на основе PostgreSQL</li>
+                                        <li>Базовый синтаксис SQL</li>
+                                        <li>Запросы Select, Join, Outer Left, Right</li>
+                                        <li>JDBC</li>
+                                        <li>Индексирование, внешние ключи, естественные ключи</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Клиент-серверное приложение
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Общая схема клиент-серверного приложения</li>
+                                        <li>Протоколы HTTP и HTTPS</li>
+                                        <li>Servlet</li>
+                                        <li>JSP, MVC, JSLT</li>
+                                        <li>Filter, Session, Auth</li>
+                                        <li>Клиентские языки HTML, JS, CSS</li>
+                                        <li>Тестирование Mockito</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Professional -->
+
+            <div class="panel panel-info">
+                <div class="panel-heading panel-darkerblue">
+                    <h4 align="center">Пакет "Профи" - 15720 руб.</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-info">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        ООД
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Принципы SOLID</li>
+                                        <li>Разработка через тестирование (TDD)</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Память
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Cборщик мусора</li>
+                                        <li>Типы сборщиков</li>
+                                        <li>Профилирование приложений</li>
+                                        <li>Soft weak ссылки и коллекции</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Функциональное программирование на Java 8
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Lambda</li>
+                                        <li>Stream API</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Ввод-вывод, Socket
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>InputStreams, OutputStreams</li>
+                                        <li>Readers, Writers</li>
+                                        <li>Scanner</li>
+                                        <li>Файловые менеджеры</li>
+                                        <li>Сокеты</li>
+                                        <li>Внешняя сортировка файлов</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Hibernate
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>Базовые понятия ORM. Hibernate</li>
+                                        <li>Конфигурирование Hibernate</li>
+                                        <li>Связь модельных представлений с объектами</li>
+                                        <li>Язык запросов HQL</li>
+                                        <li>Интеграционное тестирование</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Spring
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Spring IoC</li>
+                                        <li>Spring HibernateTemplate</li>
+                                        <li>Spring Data</li>
+                                        <li>Spring MVC</li>
+                                        <li>Spring Security</li>
+                                        <li>Spring Test</li>
+                                        <li>Spring Boot</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Expert -->
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 align="center">Пакет "Эксперт" - 13630 руб.</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading flex-col">
+                                    <h4>
+                                        Интеграция с др. приложениями
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>EJB, JBoss RemoteEJB</li>
+                                        <li>RMI API</li>
+                                        <li>Web Service API</li>
+                                        <li>REST API</li>
+                                        <li>Асинхронные сообщения на базе JMS</li>
+                                        <li>WebSocket</li>
+                                        <li>Email</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading flex-col">
+                                    <h4>
+                                        Шаблоны проектирования
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Observer</li>
+                                        <li>Decorator</li>
+                                        <li>Factory</li>
+                                        <li>Singleton</li>
+                                        <li>Proxy</li>
+                                        <li>Adapter, Facade</li>
+                                        <li>Momento</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-primary flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Алгоритмы обработки данных
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>Оценка сложности алгоритма</li>
+                                        <li>Сортировка и поиск</li>
+                                        <li>Виды структур данных</li>
+                                        <li>Обходы графов</li>
+                                        <li>Комбинаторный поиск и эвристические методы</li>
+                                        <li>Динамическое программирование</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-primary flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Помощь в поиске работы
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>Составлении резюме</li>
+                                        <li>Сопроводительное письмо</li>
+                                        <li>Отбор вакансий</li>
+                                        <li>Подготовка к собеседованию</li>
+                                        <li>Помощь в решении тестовых заданий</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4>При единовременной оплате всего курса предоставляется скидка - 10%</h4>
+            <h4>Вы можете составить свой план обучения из отдельных модулей, стоимость модуля 3625 рублей</h4>
+        </div>
+    </div>
+
+    <!-- Blog Information -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+            <span class="anchor" id="level"></span>
+            <h3>Уровень слушателя</h3>
+            Для прохождения курса слушатель должен иметь базовое представление о программировании в целом, знать
+            основные понятия: "переменная", "функция", "операторы условия", "циклы" и "массивы".<br/>
+            <br/>
+            <span class="anchor" id="process"></span>
+            <h3>Как проходит обучение</h3>
+            Обучение проходит <strong>только индивидуально</strong>.
+            Весь процесс обучения максимально адаптирован к процессу разработки ПО в реальной фирме.
+            Первоначально ученику выдается доступ в bug tracker. Это основное ПО при разработки проектов.
+            Подробно про этот инструмент в видео <a href="https://www.youtube.com/watch?v=0jSJwQsDZB4">ссылка</a>.
+            В трекере ученику создается отдельная папка, в которой он ведет всю активность по выполненным заданиям.
+            <br/> <br/>
+            Структурная схема прохождения занятия:<br/>
+            <ol>
+                <li>
+                    Просмотр видеоурока. Видео доступно только ученикам. Хранятся видео в яндекс диске.<br/>
+                    На каждый урок создано одно-два видео (продолжительность 30-60 мин.)
+                </li>
+                <li>
+                    Запоминание материала урока. Составление миниконспекта.
+                </li>
+                <li>
+                    Выполнение задания:
+                    <ol>
+                        <li>Прочитать задание. Все задания находятся в трекере.</li>
+                        <li>Продумать логику работы. Схематично изобразить процесс выполнения программы.</li>
+                        <li>Реализовать код. Написать JUnit test.</li>
+                        <li>Проверить корректность работы в консоли командами - mvn clean test</li>
+                        <li>Залить код в github</li>
+                        <li>Создать задачу в трекере. Указать в ней ссылку на github</li>
+                        <li>Выполнить операцию - комментарий с указанием ответственного наставника.</li>
+                        <li>В течении 1-2 дней задание будет проверено. На почту придет уведомление о проверке.</li>
+                        <li>Если в ответе нет указаний на исправления,
+                            то задачу можно закрывать и переходить к следующему заданию
+                        </li>
+                        <li>
+                            Если в задании есть указания на правки, необходимо устранить все замечания
+                            и вернуться к пункту 3.7.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    После прохождения каждого модуля идет раздел - контрольные вопросы и тестовое задание.
+                    Этот раздел эммулирует реальное собеседование.<br/>
+                    Как его сдавать:
+                    <ol>
+                        <li>Подготовить ответы на вопросы. В разделе дан список вопросов.</li>
+                        <li>Выучить полученный ответы.</li>
+                        <li>Создать задачу в трекере с указаниям времени и даты сдачи вопросов.</li>
+                        <li>На это время и дату наставник созванивается с учеником
+                            и в устной форме спрашивает ответы на вопросы.
+                        </li>
+                        <li>Если ученик отвечает на 80% вопросов, то собеседование принимается,
+                            в противном случае ученик заново готовиться к сдаче, до тех пор пока не сдаст.
+                        </li>
+                        <li>После сдачи теориии ученик выполняет тестовое задание по схеме пункта 3.</li>
+                    </ol>
+                </li>
+                <li>
+                    В процессе прохождения курса у Вас будут появляться вопросы.
+                    Все вопросы нужно заносить в трекер с указанием ответственного.
+                    В течении дня на задачу придет ответ с указанием времени консультации по скайпу.
+                </li>
+            </ol>
+            <br/>
+            Подводя итог: основная часть обучения происходит в текстовом режиме общения.
+            Наставник обязательно созванивается с учеником при сдаче вопросов по теории.
+            Так же все ученики состоят в общем чате в HipChat, в котором комнаты для общения разделены тематически
+            по каждому модулю. В чате можно обсуждать темы, связанные с программированием, курсом, показывать свои
+            решения,
+            спрашивать совета по решению и делиться полезной информацией.
+
+            <br/><br/>
+            После окончания курса у вас будет завершенный проект с использованием всех технологий, указанных в описании
+            курса.
+            Такой проект будет большим плюсом в вашем резюме. Также при трудоустройстве для получения рекомендаций вы
+            можете указать мои контакты в своем резюме.
+            <br/>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="price"></span>
+                    <h3>Время прохождения</h3>
+                    Время прохождения курса не привязано к его стоимости. Каждый слушатель должен освоить весь материал
+                    курса.
+                    Сроки обучения зависят от начального уровня подготовки ученика и его способностей.
+                    Например, ступень "Старт" - (2-3 занятия в неделю) слушатель проходит курс за 2 месяца.
+                    Если вам понадобится больше 2 месяцев, вы ничего не доплачиваете, а продолжаете заниматься дальше.
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="plan"></span>
+                    <h3 id="join">Записаться на курс</h3>
+                    Для того чтобы записаться на курс, необходимо заполнить
+                    <a target="_blank" href="https://yadi.sk/d/bKxxxLvvxbG2q">анкету</a> и отправить ее на почту
+                    parsentev@yandex.ru.
+                    Далее необходимо пройти первичное собеседование по Skype: petrarsentev.<br/><br/>
+                    Итак, ваши действия должны быть такими:<br/><br/>
+                    <ol>
+                        <li>
+                            Заполнить анкету и отправить на почту. В письме обязательно указать время и дату,
+                            когда вы можете поговорить по скайпу голосом. Преварительно проверьте настройки микрофона.
+                        </li>
+                        <li>
+                            Добавиться в Skype.
+                        </li>
+                    </ol>
+                    На первичном собеседовании вы можете уточнить любые вопросы, рассказать о себе, спланировать
+                    расписание занятий.
+                    Время проведения собеседований: с 8:00 до 22:00 по Московскому часовому поясу.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="discount"></span>
+                    <h3>Скидки и бонусы</h3>
+                    <ul>
+                        <li>
+                            Вы можете разместить пост в социальной сети VK.com с текстом -
+                            Я прохожу обучение здесь http://job4j.ru/ - расскажу подробности.
+                            И получите 500 рублей скидки.
+                        </li>
+                        <li>
+                            Если по вашей рекоммендации придет новый ученик Вы и новый ученик получаете по 500 рублей
+                            скидки.
+                        </li>
+                        <li>
+                            Распостраняя любую информацию про курс вы можете значительно снизить стоимость обучения.
+                        </li>
+                        <li>
+                            После окончания курса мы помогаем с составлением резюме, сопроводительным письмом и выбором
+                            вакансий.
+                            Поддерживаем на всех стадиях трудоустройства.
+                        </li>
+                        <li>
+                            По желанию ученик может принять участие в разработке портала job4j и получить реальный
+                            коммерческий опыт.
+                        </li>
+                    </ul>
+                    <br/><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog FAQ -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <span class="anchor" id="faq"></span>
+            <h3>FAQ</h3>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse1">
+                                Я буду заниматься индивидуально?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да, всё обучение происходит в индивидуальном порядке, включая проверку заданий и сдачу
+                            теории голосом.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse2">
+                                Хватит ли мне материала курса для устройства на работу?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да, после окончания курса вы сможете устроиться на позицию Junior Java Developer.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse3">
+                                Сколько времени занимает обучение?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Время обучения зависит от вашей начальной подготовки и выбранной программы.
+                            Максимальный курс рассчитан в среднем на 8 месяцев.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse4">
+                                Какая цена курса?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Пакет "Старт" - 5870 руб.<br/>
+                            Пакет "Стандарт" - 11950 руб.<br/>
+                            Пакет "Профи" - 15720 руб.<br/>
+                            Пакет "Эксперт" - 13630 руб.<br/>
+                            Каждый пакет оплачивается отдельно.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse5">
+                                Когда начинается обучение?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Сразу после прохождения первичного собеседования.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse7">
+                                Какие формы оплаты возможны?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Через электронные системы, карточками.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse8">
+                                Как записаться на курс?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Заполнить и прислать анкету.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse9">
+                                Как с Вами связаться?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            email : parsentev@yandex.ru
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse10">
+                                Можно ли начать проходить курс не с начала?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Нет. Обучение должно быть с первой ступени.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse11">
+                                После окончания будет ли выдан сертификат?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse11" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Вы можете указать мои контактные данные для получения рекомендации для работадателя.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse12">
+                                Можно ли задавать дополнительные вопросы или задания?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse12" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse13">
+                                Кто проводить обучение?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse13" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Сейчас обучение провожу Я (Петр Арсентьев), а так же мне помогает Олег Арюков.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse14">
+                                Как проверяется код?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse14" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Есть стандарты описаные в документации.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse15">
+                                Будет ли помощь при поиске работы?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse15" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse16">
+                                Помогаете ли вы составить резюме?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse16" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse17">
+                                Подготавливаете ли вы к собеседования?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse17" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- Footer -->
+    <div id="footer"></div>
+</div>
+</body>
+
+</html>

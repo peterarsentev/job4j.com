@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn Java and find a job for Junion and Senior">
+    <meta name="author" content="Job4j.ru">
+
+    <title>Learn Java and find a job for Junion and Senior</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css?v=18012017" rel="stylesheet">
+
+    <link href="css/job4j.css?v=02022017" rel="stylesheet">
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/validator.js"></script>
+    <!--<script src="js/job4j.js?v=31052017"></script>-->
+    <script>
+        $(function() {
+            CONTEXT = '';
+            $("#header").load(
+                    "header.html?v=31052017",
+                    function() {
+//                        initHeader();
+//                        loadUser();
+                    }
+            );
+            $("#footer").load("footer.html?v=31052017");
+        });
+    </script>
+    <style>
+        .equal {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .equal > div[class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media screen and (min-width: 768px) {
+            .equal2, .equal2 > div[class*='col-'] {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                flex:1 0 auto;
+            }
+        }
+
+        /*Text-styles for main blog*/
+        .coolfont {
+            font-family: Arial;
+            color: white;
+            padding-left: 20px;
+            line-height: 1.3;
+        }
+        /*End of text-styles for main blog*/
+
+        /*Styles for button at main blog*/
+        .btnstart {
+            width: 320px;
+            height: 60px;
+            border: 3px solid white;
+            background: #49c1dc;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            line-height: 35px;
+        }
+
+        .btnstart:hover {
+            color: white;
+            background: #52d9f4;
+        }
+        /*End of styles for buttob*/
+    </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="container">
+
+    <!-- Main blog with picture and button start education -->
+    <div class="row">
+        <div class = "col-md-12" style="background: #49c1dc;">
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="coolfont" style="font-size: 55px; font-weight: 400; padding-top: 20px">Learn Java and find a job<br/> together with Job4j!</p>
+                    <p class="coolfont" style="font-size: 22px; font-weight: 300; padding-top: 10px">
+                        Job4j - portal for learning Java<br/>and finding a job from Junior to Senior.</p>
+                    <br/><br/>
+                    <p style="padding-left: 20px; padding-top: 10px; padding-bottom: 100px"><a href="courses/java_courses.html" class="btn btnstart pull-left btn-lg">
+                        START</a></p>
+                </div>
+                <div class="col-md-5">
+                    <img class="img-responsive pull-right" src="img/comp2.jpg" alt="" style="padding-top: 50px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog "why job4j?" -->
+    <div class="row" style="padding-bottom: 50px">
+
+        <div class="col-md-12" style="text-align: center">
+            <h1 class="coolfont" style="color: black">
+               Why Job4j?
+            </h1>
+        </div>
+
+        <div class = "col-md-12" style="padding-top: 50px">
+            <div class="row" style="text-align: center">
+                <div class="col-md-4">
+                    <img src="img/Man.png" alt="">
+                    <h3>Individual<br/>approach</h3>
+                    <p>Classes are held only individually without any groups</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/Leader.png" alt="">
+                    <h3>Communitation directly<br/>with tutor</h3>
+                    <p>Regular communication with tutor</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/Timer.png" alt="">
+                    <h3>Individual<br/>schedule table</h3>
+                    <p>Classes are held on a personal training schedule, at an individual pace</p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "col-md-12" style="padding-top: 50px">
+            <div class="row" style="text-align: center">
+                <div class="col-md-4">
+                    <img src="img/Earth.png" alt="">
+                    <h3>Remote <br/> training</h3>
+                    <p>You can live every where in the world.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/Chat.png" alt="">
+                    <h3>Communication with<br/>other students</h3>
+                    <p>Ability to ask questions and communicate with other students in a general chat</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/monitor.png" alt="">
+                    <h3>Real job's environments</h3>
+                    <p>The environment and the learning process are as close as possible to working in a real project</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End of main blog-->
+
+    <!-- Marketing Icons Section -->
+    <!--<div class="row equal" style="background: #99dfef">-->
+        <!--<div class="col-md-12" style="text-align: center; padding-bottom: 20px">-->
+            <!--<h1 class="coolfont" style="color: black">-->
+                <!--Popular courses-->
+            <!--</h1>-->
+        <!--</div>-->
+        <!--<div class="col-md-4">-->
+            <!--<div class="offer offer-radius offer-primary">-->
+                <!--&lt;!&ndash; Panel Java Junior &ndash;&gt;-->
+                <!--<a href="courses/java_with_zero_to_job.html" style="text-decoration: none; color:black">-->
+
+                    <!--<div class="shape">-->
+                        <!--<div class="shape-text">-->
+                            <!--<p>HOT</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="offer-content">-->
+                        <!--<br/>-->
+                        <!--<h1 align="center" class="text-info">-->
+                            <!--Java SE, EE-->
+                        <!--</h1>-->
+                        <!--<h4 align="center" class="text-info">-->
+                            <!--Middle level-->
+                        <!--</h4>-->
+                        <!--<br/>-->
+                        <!--<h4>-->
+                            <!--<i class="fa fa-fw fa-university"></i>-->
+                            <!--From 0 to job-->
+                        <!--</h4>-->
+                        <!--<p>-->
+                            <!--Курс начинается с основ синтаксиса языка и плавно переходит к темам серверной-->
+                            <!--разработки.-->
+                            <!--Рассматриваются темы: Java 8, Maven, Git, JUnit, SQL, Servlet, JSP, Hibernate,-->
+                            <!--Spring (Boot, Data, Security), JAXB, SOAP, REST.-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <!--&lt;!&ndash; Panel QA Automation &ndash;&gt;-->
+        <!--<div class="col-md-4">-->
+            <!--<div class="offer offer-radius offer-primary">-->
+                <!--<a href="courses/work_help.html" style="text-decoration: none; color:black">-->
+
+                    <!--<div class="shape">-->
+                        <!--<div class="shape-text">-->
+                            <!--<p>HOT</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="offer-content">-->
+                        <!--<br/>-->
+                        <!--<h1 align="center" class="text-info">-->
+                            <!--Hire, Resume, Interview-->
+                        <!--</h1>-->
+                        <!--<h4 align="center" class="text-info">-->
+                            <!--Помощь в трудоустройстве-->
+                        <!--</h4>-->
+                        <!--<br/>-->
+                        <!--<h4><i class="fa fa-fw fa-dollar"></i>-->
+                            <!--Получи работу мечты!-->
+                        <!--</h4>-->
+                        <!--<p>-->
+                            <!--Прокачай свое резюме, найти слабые места в знаниях, подготовься к собеседованию,-->
+                            <!--получи "офер".-->
+                            <!--Подробности ...-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <!--&lt;!&ndash; Panel Free Java &ndash;&gt;-->
+        <!--<div class="col-md-4">-->
+            <!--<div class="offer offer-radius offer-primary">-->
+                <!--<a href="courses/java_beginner.html" style="text-decoration: none; color:black">-->
+
+                    <!--<div class="shape">-->
+                        <!--<div class="shape-text">-->
+                            <!--<p>HOT</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="offer-content">-->
+                        <!--<br/>-->
+                        <!--<h1 align="center" class="text-info">-->
+                            <!--Java-->
+                        <!--</h1>-->
+                        <!--<h4 align="center" class="text-info">-->
+                            <!--Beginner Free-->
+                        <!--</h4>-->
+                        <!--<br/>-->
+                        <!--<h4>-->
+                            <!--<i class="fa fa-fw fa-book"></i>-->
+                            <!--Java в аналогиях-->
+                        <!--</h4>-->
+                        <!--<p>-->
+                            <!--Бесплатный вводный курс по Java, рассчитанный на тех, кто не знаком с языками программирования.-->
+                            <!--Создание первой программы, изучение синтаксиса языка и многое другое.-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-12">-->
+            <!--<div class="row" style="padding: 25px">-->
+            <!--<a href="courses/java_courses.html" class="btn btnstart pull-right btn-lg">-->
+                <!--All courses </a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<!--<script src="js/jquery.js"></script>-->
+
+<!-- Bootstrap Core JavaScript -->
+<!--<script src="js/bootstrap.min.js"></script>-->
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+
+</body>
+
+</html>

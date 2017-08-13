@@ -1,0 +1,51 @@
+<div class="row" ng-hide="loaded">
+    <div class="col-md-2 col-md-offset-5">
+        <div class='uil-ripple-css' style='transform:scale(0.54);'><div></div><div></div></div>
+    </div>
+</div>
+
+<div class="alert alert-info" ng-show="error">
+    Вы можете повторно пройти экзамен через день!
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{exam.name}}
+            </div>
+            <div class="panel-body" data-ng-bind-html="description">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Статистика / Лучшие результаты (Балл%, Количество попыток)
+            </div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    Всего прошло : {{ details.total }}<br/>
+                    Средний балл : {{ details.average }}%
+                </div>
+                <div class="col-md-6">
+                    <div ng-repeat=" person in details.persons">
+                        {{ person.second.username }} -
+                        {{ person.first.result }}%
+                        ({{ person.first.total }})
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12 pull-right">
+        <a ng-href="#/load" class="btn btn-default">Назад</a>
+        <button ng-click="start(exam)" class="btn btn-success pull-right">Пройти</button>
+    </div>
+</div>

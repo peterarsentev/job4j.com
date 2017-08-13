@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12" id="profile-form" role="form">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="alert alert-info" ng-show="updated">
+                    Профиль обновлен.
+                </div>
+                <div class="form-group">
+                    <label for="usr">ФИО:</label>
+                    <input type="text" class="form-control" id="name" ng-model="person.username"
+                           data-minlength="6"
+                           data-error="Заполните поле" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="usr">Пароль:</label>
+                    <input type="password" class="form-control" id="password" ng-model="person.password"
+                           placeholder="Пароль"
+                           data-minlength="6"
+                           data-error="Заполните поле пароль" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="usr">Подтверждение:</label>
+                    <input type="password" class="form-control" id="name" ng-model="person.confirm"
+                           placeholder="Подтвердить"
+                           data-minlength="6"
+                           data-error="Заполните поле подтверждение"
+                           data-match="#password" data-match-error="Пароли не совпадают" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <a href="#" class="btn btn-default" onclick="document.location.href = CONTEXT + 'settings/settings.html';">
+                    Назад
+                </a>
+                <button class="btn btn-default pull-right" ng-click="save(person)">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

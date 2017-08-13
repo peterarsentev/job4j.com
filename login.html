@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/job4j.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/job4j.js?v=31052017"></script>
+    <script>
+        $(function(){
+            CONTEXT = '';
+            $("#header").load(
+                "header.html?v=31052017",
+                function() {
+                    initHeader();
+                }
+            );
+            $("#footer").load("footer.html?v=31052017");
+        });
+
+        $(function() {
+            $('#login-form-link').click(function(e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function(e) {
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+            $('#username').keyup(function(e) {
+                if(e.keyCode == 13) {
+                    login("#login-form")
+                }
+            });
+            $('#password').keyup(function(e) {
+                if(e.keyCode == 13) {
+                    login("#login-form")
+                }
+            });
+        });
+    </script>
+    <style>
+        .panel-login {
+            border-color: #ccc;
+            -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+        }
+        .panel-login>.panel-heading {
+            color: #00415d;
+            background-color: #fff;
+            border-color: #fff;
+            text-align:center;
+        }
+        .panel-login>.panel-heading a{
+            text-decoration: none;
+            color: #666;
+            font-weight: bold;
+            font-size: 15px;
+            -webkit-transition: all 0.1s linear;
+            -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+        }
+        .panel-login>.panel-heading a.active{
+            color: #029f5b;
+            font-size: 18px;
+        }
+        .panel-login>.panel-heading hr{
+            margin-top: 10px;
+            margin-bottom: 0px;
+            clear: both;
+            border: 0;
+            height: 1px;
+            background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+            background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+            background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+            background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+        }
+        .panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+            height: 45px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            -webkit-transition: all 0.1s linear;
+            -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+        }
+        .panel-login input:hover,
+        .panel-login input:focus {
+            outline:none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            border-color: #ccc;
+        }
+        .btn-login {
+            background-color: #59B2E0;
+            outline: none;
+            color: #fff;
+            font-size: 14px;
+            height: auto;
+            font-weight: normal;
+            padding: 14px 0;
+            text-transform: uppercase;
+            border-color: #59B2E6;
+        }
+        .btn-login:hover,
+        .btn-login:focus {
+            color: #fff;
+            background-color: #53A3CD;
+            border-color: #53A3CD;
+        }
+        .forgot-password {
+            text-decoration: underline;
+            color: #888;
+        }
+        .forgot-password:hover,
+        .forgot-password:focus {
+            text-decoration: underline;
+            color: #666;
+        }
+
+        .btn-register {
+            background-color: #1CB94E;
+            outline: none;
+            color: #fff;
+            font-size: 14px;
+            height: auto;
+            font-weight: normal;
+            padding: 14px 0;
+            text-transform: uppercase;
+            border-color: #1CB94A;
+        }
+        .btn-register:hover,
+        .btn-register:focus {
+            color: #fff;
+            background-color: #1CA347;
+            border-color: #1CA347;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row" style="padding-top: 90px;">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#" class="active" id="login-form-link">Войти</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="#" id="register-form-link">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12" data-toggle="validator" role="form">
+                            <div id="login-form" role="form" style="display: block;">
+                                <div class="alert alert-danger" id="login_error" style="display: none;"></div>
+                                <div class="form-group">
+                                    <input type="text" name="username" id="username" tabindex="1" class="form-control"
+                                           data-error="Адрес email не корректный" placeholder="Почта e-mail" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" tabindex="2" class="form-control"
+                                           data-minlength="6" placeholder="Пароль"
+                                           data-error="Заполните поле пароль" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="button" name="login-submit" id="login-submit" tabindex="4"
+                                                   class="form-control btn btn-login" onclick="return login('#login-form');" value="Войти">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="text-center">
+                                                <a href="forgot.html" tabindex="5" class="forgot-password">Забыли пароль?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="register-form" role="form" style="display: none;">
+                                <div class="alert alert-danger" id="reg_error" style="display: none;"></div>
+                                <div class="form-group">
+                                    <input type="text" name="reg-username" id="reg-username" tabindex="1" class="form-control" placeholder="ФИО" data-minlength="6"
+                                           data-error="Заполните поле" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="reg-email" id="reg-email" tabindex="1" class="form-control" placeholder="Email адрес"
+                                           data-error="Адрес email не корректный" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="reg-password" id="reg-password" tabindex="2" class="form-control"
+                                           placeholder="Пароль"
+                                           data-minlength="6"
+                                           data-error="Заполните поле пароль" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="reg-confirm-password" id="reg-confirm-password" tabindex="2"
+                                           class="form-control" placeholder="Подтвердить"
+                                           data-minlength="6"
+                                           data-error="Заполните поле подтверждение"
+                                           data-match="#reg-password" data-match-error="Пароли не совпадают" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="reg-privacy" id="reg-privacy" data-error="Принять пользовательское соглашение" required>
+                                            Я прочитал и принимаю условия
+                                            <a href="#" onclick="window.open(CONTEXT + 'privacy.html', '_blank');">
+                                                пользовательского соглашения</a>
+                                        </label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="button" name="register-submit" id="register-submit" tabindex="4" onclick="return registration('#register-form');" class="form-control btn btn-register" value="Зарегистрироваться">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="footer"></div>
+</div>
+</body>
+</html>

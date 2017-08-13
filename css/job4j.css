@@ -1,0 +1,371 @@
+.navbar-default {
+    background-color: teal;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+.navbar-custom {
+    color: #49c1dc;
+    background-color: white;
+    border-color: white;
+}
+
+.navbar-custom .navbar-nav>li>a {
+    color: #49c1dc;
+    font-weight: 500;
+}
+
+.navbar-custom .navbar-brand {
+    color: #49c1dc;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.navbar-custom .navbar-nav>li>a:hover {
+    color: #52daf5;
+}
+
+
+.navbar-custom .navbar-brand:hover {
+    color: #52daf5;
+}
+
+/*used for block link like disable*/
+.noLink {
+    pointer-events: none;
+}
+.noLink a {
+    color: grey !important;
+}
+/* /end */
+
+/*for centering pagination*/
+.pagination {
+    display: block;
+    text-align: center;
+}
+.pagination>li {
+    display: inline-block !important;
+}
+
+/*Flex-box block - for dynamic height of panels on pages java_with_zero_to_job and qa*/
+.row-flex, .row-flex > div[class*='col-'] {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.row-flex-wrap {
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    flex: 0;
+}
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+    margin: -.2px; /* hack adjust for wrapping */
+}
+
+.container-flex > div[class*='col-'] div, .row-flex > div[class*='col-'] div {
+    width: 100%;
+}
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+    flex-flow: column nowrap;
+}
+
+.flex-grow {
+    display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+/*End of flex-box block*/
+
+/*Active panels block*/
+.shape {
+    border-style: solid;
+    border-width: 0 70px 40px 0;
+    float: right;
+    height: 0px;
+    width: 0px;
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -o-transform: rotate(360deg); /* Opera 10.5 */
+    -webkit-transform: rotate(360deg); /* Safari and Chrome */
+    transform: rotate(360deg);
+}
+
+.offer {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 15px 0;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
+.offer:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.shape {
+    border-color: rgba(255, 255, 255, 0) #d9534f rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+}
+
+.offer-radius {
+    border-radius: 7px;
+}
+
+.offer-primary {
+    border-color: #428bca;
+}
+
+/*Color of shape in right corner of panel changed here to corall*/
+.offer-primary .shape {
+    border-color: transparent #ff7f50 transparent transparent;
+}
+
+.shape-text {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    right: -40px;
+    top: 2px;
+    white-space: nowrap;
+    -ms-transform: rotate(30deg); /* IE 9 */
+    -o-transform: rotate(360deg); /* Opera 10.5 */
+    -webkit-transform: rotate(30deg); /* Safari and Chrome */
+    transform: rotate(30deg);
+}
+
+.offer-content {
+    padding: 0 20px 10px;
+}
+/*End of active panels block*/
+
+/*Style for "Look for all courses" button on index page"*/
+.btn-outlined {
+    border-radius: 5px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-outlined.btn-success {
+    background: none;
+    border: 3px solid #5cb85c;
+    color: #5cb85c;
+}
+.btn-outlined.btn-success:hover,
+.btn-outlined.btn-success:active {
+    color: #FFF;
+    background: #47a447;
+}
+/* /end */
+
+@-webkit-keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+@-webkit-keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+@-moz-keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+@-ms-keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+@-moz-keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+@-webkit-keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+@-o-keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+@keyframes uil-ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        margin: 0 0 0 0;
+    }
+    33% {
+        width: 44%;
+        height: 44%;
+        margin: -22% 0 0 -22%;
+        opacity: 1;
+    }
+    100% {
+        width: 88%;
+        height: 88%;
+        margin: -44% 0 0 -44%;
+        opacity: 0;
+    }
+}
+.uil-ripple-css {
+    background: none;
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.uil-ripple-css div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-radius: 50%;
+    border-width: 12px;
+    border-style: solid;
+    -ms-animation: uil-ripple 2s ease-out infinite;
+    -moz-animation: uil-ripple 2s ease-out infinite;
+    -webkit-animation: uil-ripple 2s ease-out infinite;
+    -o-animation: uil-ripple 2s ease-out infinite;
+    animation: uil-ripple 2s ease-out infinite;
+}
+.uil-ripple-css div:nth-of-type(1) {
+    border-color: #afafb7;
+}
+.uil-ripple-css div:nth-of-type(2) {
+    border-color: #5cffd6;
+    -ms-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+}

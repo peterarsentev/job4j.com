@@ -1,0 +1,27 @@
+<div class="row" ng-hide="loaded">
+    <div class="col-md-2 col-md-offset-5">
+        <div class='uil-ripple-css' style='transform:scale(0.54);'><div></div><div></div></div>
+    </div>
+</div>
+
+<div class="alert alert-info" ng-show="error">
+    Вы можете повторно пройти экзамен через день!
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ stage.name }}
+            </div>
+            <div class="panel-body" data-ng-bind-html="description">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12 pull-right">
+        <button ng-click="next(stage)" class="btn btn-success pull-right">Далее</button>
+    </div>
+</div>

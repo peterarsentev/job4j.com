@@ -1,0 +1,84 @@
+<div class="row" ng-hide="loaded">
+    <div class="col-md-2 col-md-offset-5">
+        <div class='uil-ripple-css' style='transform:scale(0.54);'><div></div><div></div></div>
+    </div>
+</div>
+
+<div class="alert alert-info" ng-show="error">
+    Вы можете повторно пройти экзамен через день!
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{percent}}%">
+                {{ current }} \ {{ total }}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group" data-ng-bind-html="description"></div>
+                <div class="form-group" ng-show="task.type == 'SINGLE_LINE'">
+                    <label for="usr">{{task.name}}:</label>
+                    <input type="text" class="form-control" ng-module="task.values[0].value">
+                </div>
+                <div class="form-group" ng-show="task.type == 'ARRAY'">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+                <div class="form-group" ng-show="task.type == 'LIST'">
+                    <label for="sel1">Select list:</label>
+                    <select class="form-control" id="sel1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <div class="form-group" ng-show="task.type == 'MULTILIST'">
+                    <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
+                    <select multiple class="form-control" id="sel2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group" ng-show="task.type == 'DATE'">
+                    <label for="usr">Name:</label>
+                    <input type="date" class="form-control" id="usr">
+                </div>
+                <div class="form-group" ng-show="task.type == 'INT'">
+                    <label for="usr">Name:</label>
+                    <input type="number" class="form-control" id="usr">
+                </div>
+                <div class="form-group" ng-show="task.type == 'ATTACH'">
+                    <label for="usr">Name:</label>
+                    <input type="file" class="form-control" id="usr">
+                </div>
+
+                <div class="form-group" ng-show="task.type == 'TASK'">
+                    <label for="comment">Code:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+
+                <div class="form-group" ng-show="task.type == 'TASK'">
+                    <label for="comment">Test:</label>
+                    <textarea class="form-control" rows="5" id="comment" disabled></textarea>
+                </div>
+                <div class="form-group" ng-show="task.type == 'TASK'">
+                    <button ng-click="start(exam)" class="btn btn-default pull-right">Запустить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12 pull-right">
+        <a ng-href="#/load" class="btn btn-default">Назад</a>
+        <button ng-click="next(task)" class="btn btn-success pull-right">Далее</button>
+    </div>
+</div>

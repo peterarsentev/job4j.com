@@ -1,0 +1,108 @@
+<div class="row" ng-hide="loaded">
+    <div class="col-md-2 col-md-offset-5">
+        <div class='uil-ripple-css' style='transform:scale(0.54);'><div></div><div></div></div>
+    </div>
+</div>
+
+<div class="row" ng-show="loaded">
+    <div class="col-md-12">
+        <table class="table forum">
+            <thead>
+            <tr>
+                <th>
+                    <h4>
+                        <a ng-href="#/vacancy/{{details.vacancy.id}}">
+                            {{ details.vacancy.name }}
+                        </a>
+                        <br>
+                        <small>
+                            {{ details.vacancy.company }}.
+                            {{ details.vacancy.location }}.
+                            {{ details.vacancy.rate }}.
+                            {{ details.vacancy.experience }}.
+                        </small><br>
+                        <small>
+                            Все : {{ details.statistic.total }}
+                            <a ng-href="#/vacancy/candidates/{{details.vacancy.id}}/total" class="btn-link">
+                                Все : {{ details.statistic.total }}
+                            </a>&nbsp;
+                            <a ng-href="#/vacancy/candidates/{{details.vacancy.id}}/success" class="btn-link">
+                                Успешно пройденные : {{ details.statistic.success }}
+                            </a>&nbsp;
+                            <a ng-href="#/vacancy/candidates/{{details.vacancy.id}}/fail" class="btn-link">
+                                Не прошли : {{ details.statistic.fail }}
+                            </a>&nbsp;
+                            <a ng-href="#/vacancy/candidates/{{details.vacancy.id}}/reject" class="btn-link">
+                                Отказано : {{ details.statistic.reject }}
+                            </a>&nbsp;
+                            <a ng-href="#/vacancy/candidates/{{details.vacancy.id}}/hire" class="btn-link">
+                                В процессе найма : {{ details.statistic.hire }}
+                            </a>
+                        </small>
+                    <div class="form-group pull-right" style="display: inline;">
+                        <input type="text" style="width: 300px;" ng-model="search" class="form-control" placeholder="Поиск">
+                    </div>
+                    </h4>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="candidate in data.candidates|itemsPerPage:data.itemsPerPage" total-items="data.total_count">
+                <td>
+                    <div style="padding-bottom: 20px;">
+                        <strong>{{ candidate.person.username }}</strong> ({{ candidate.person.email }})
+                        <button class="btn btn-default pull-right" ng-click="deleteStage(stage)">
+                            <span class="glyphicon glyphicon-pencil"></span> Коментарий
+                        </button>
+                    </div>
+                    <table class="table table-bordered" style="background-color: inherit;">
+                        <tr>
+                            <td>Дата прохождения</td>
+                            <td>
+                                {{ candidate.interview.result }} &nbsp;|&nbsp;
+                                {{ candidate.interview.start | date: 'dd.MM.yyyy'}} -
+                                <span ng-show="candidate.interview.finish">
+                                    {{ candidate.interview.finish | date: 'dd.MM.yyyy'}}
+                                </span>
+                                <span ng-hide="candidate.interview.finish">
+                                    не завершен
+                                </span>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="track in candidate.track" ng-if="track.task">
+                            <td>{{ track.task.name }}</td>
+                            <td>
+                                <div ng-repeat="value in candidate.tasks[track.task.id].values">
+                                    <span ng-if="track.task.type == 'SINGLE_LINE' || track.task.type == 'ARRAY'
+                                                    || track.task.type == 'LIST'
+                                                  || track.task.type == 'INT' || track.task.type == 'DATE'">
+                                         {{ value.value }}
+                                    </span>
+                                    <span ng-if="track.task.type == 'MULTILIST'">
+                                         {{ value.value }}
+                                    </span>
+                                    <span ng-if="track.task.type == 'TASK'">
+                                        <a href="task/{{value.id}}" target="_blank" class="btn-link">Исходный код</a>
+                                    </span>
+                                    <span ng-if="track.task.type == 'ATTACH'">
+                                        <a href="download/{{value.id}}" target="_blank" class="btn-link">Скачать</a>
+                                    </span>
+                                    <span ng-if="track.task.type == 'TEST'">
+                                         {{ track.task.values[0].info }} - {{ value.value }}%
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls
+                max-size="10"
+                direction-links="true"
+                boundary-links="true"
+                on-page-change="data.getData(newPageNumber)">
+        </dir-pagination-controls>
+    </div>
+</div>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
+    <link href="../css/job4j.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+    <script src="../js/validator.js"></script>
+    <script src="../js/job4j.js?v=18022017"></script>
+    <script>
+        $(function() {
+            CONTEXT = '../';
+            $("#header").load(
+                "../header.html?v=31052017",
+                function() {
+                    initHeader();
+                    loadUser();
+                }
+            );
+            $("#footer").load("../footer.html?v=31052017");
+        });
+    </script>
+    <style>
+        .forum.table > tbody > tr > td {
+            vertical-align: middle;
+        }
+
+        .forum .fa {
+            width: 1em;
+            text-align: center;
+        }
+
+        .forum.table th.cell-stat {
+            width: 6em;
+        }
+
+        .forum.table th.cell-stat-2x {
+            width: 14em;
+        }
+    </style>
+    <style>
+
+        /* WHAT YOU NEED */
+        .fading-side-menu.affix-top {
+            opacity: 1;
+            transition: opacity 1s
+        }
+        .fading-side-menu.affix {
+            top: 11.5px;
+        }
+        .fading-side-menu.affix {
+            opacity: 0.2;
+            transition: opacity 5s
+        }
+        .fading-side-menu.affix:hover {
+            opacity: 1;
+            transition: opacity 0.3s
+        }
+        /* RECOMMENDED STYLING BUT NOT REQUIRED */
+        .fading-side-menu a {
+            color: rgb(102, 102, 102);
+        }
+        .fading-side-menu a .fa {
+            padding-right:15px;
+        }
+
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+    </style>
+</head>
+
+<body ng-app="job4j">
+
+<div id="header"></div>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12" style="padding-top: 20px;">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="../index.html">Главная</a>
+                </li>
+                <li class="active">Настройки</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked">
+                <li id="notification" style="display: none;">
+                    <a href="#/notifications">Уведомления</a>
+                </li>
+                <li id="profile" style="display: none;">
+                    <a href="#/profile">Профиль</a>
+                </li>
+                <li id="task_algo" style="display: none;">
+                    <a href="#/algos">Задачи</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10" ng-view>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <hr>
+    <div id="footer"></div>
+</div>
+<script>
+    var job4j = angular.module("job4j", ['ngRoute']);
+
+    job4j.config(['$routeProvider',
+        function ($routeProvider) {
+            $routeProvider.when('/notifications', {
+                templateUrl: './notification/notifications.html',
+                controller: 'NotificationViewController'
+            }).when('/notifications/settings', {
+                templateUrl: './notification/settings.html',
+                controller: 'NotificationSettingsController'
+            }).when('/notifications/settings/update/:id?', {
+                templateUrl: './notification/setting.html',
+                controller: 'NotificationSettingsUpdateController'
+            }).when('/notifications/template/update/:id?', {
+                templateUrl: './notification/template.html',
+                controller: 'NotificationTemplateUpdateController'
+            }).when('/notifications/template/:id', {
+                templateUrl: './notification/send.html',
+                controller: 'NotificationTemplateController'
+            }).when('/algos', {
+                templateUrl: './algo/algos.html',
+                controller: 'AlgosController'
+            }).when('/algo/update/:id?', {
+                templateUrl: './algo/update.html',
+                controller: 'AlgoUpdateController'
+            }).when('/algo/:id', {
+                templateUrl: './algo/algo.html',
+                controller: 'AlgoViewController'
+            }).when('/profile', {
+                templateUrl: './profile/profile.html',
+                controller: 'ProfileController'
+            }).otherwise({
+                templateUrl: './empty.html',
+                controller: 'RouteController'
+            });
+
+        }]);
+
+    job4j.controller('RouteController', function ($scope, $http, $location, $route, $routeParams) {
+        doAction($http,
+            function() {
+                $('#notification').show();
+                $('#task_algo').show();
+                $('#profile').show();
+            },
+            function() {
+                $('#profile').show();
+            },
+            function(response) {
+            }
+        );
+    });
+
+    job4j.controller('NotificationTemplateController', function ($scope, $http, $location, $route, $routeParams) {
+        $scope.isAdmin = user.hasRole("ROLE_ADMIN");
+        doGet($http, NTF_URL + "/template/find?id=" + $routeParams.id, function (data) {
+            $scope.isAdmin = true;
+            $scope.template = data.template;
+            $scope.user = {};
+            $scope.user.key = $scope.template.key;
+        });
+
+        $scope.send = function (user) {
+            $http({
+                method: 'POST',
+                url: NTF_URL + "/template/send",
+                data: user,
+                headers: {
+                    'Authorization': 'Bearer ' + readCookie("token"),
+                    'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                $location.path("/notifications/template/" + $routeParams.id);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+    });
+
+    job4j.controller('NotificationTemplateUpdateController', function ($scope, $http, $location, $route, $routeParams) {
+        $scope.isAdmin = user.hasRole("ROLE_ADMIN");
+        $http({
+            method: 'GET',
+            url: NTF_URL + "/template/find" + ($routeParams.id ? "?id=" + $routeParams.id : ""),
+            headers: {
+                'Authorization': 'Bearer ' + readCookie("token"),
+                'Content-Type': 'application/json'
+            },
+        }).then(function successCallback(response) {
+            $scope.template = response.data.template;
+            $scope.keys = response.data.keys;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+
+        $scope.save = function (setting) {
+            $http({
+                method: 'POST',
+                url: NTF_URL + "/template/",
+                data: setting,
+                headers: {
+                    'Authorization': 'Bearer ' + readCookie("token"),
+                    'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                $location.path("/notifications");
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+    });
+
+    job4j.controller('NotificationSettingsUpdateController', function ($scope, $http, $location, $route, $routeParams) {
+        $scope.isAdmin = user.hasRole("ROLE_ADMIN");
+        $http({
+            method: 'GET',
+            url: NTF_URL + "/setting/find" + ($routeParams.id ? "?id=" + $routeParams.id : ""),
+            headers: {
+                'Authorization': 'Bearer ' + readCookie("token"),
+                'Content-Type': 'application/json'
+            },
+        }).then(function successCallback(response) {
+            $scope.setting = response.data.setting;
+            $scope.keys = response.data.keys;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+
+        $scope.save = function (setting) {
+            $http({
+                method: 'POST',
+                url: NTF_URL + "/setting/",
+                data: setting,
+                headers: {
+                    'Authorization': 'Bearer ' + readCookie("token"),
+                    'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                $location.path("/notifications/settings");
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+    });
+
+    job4j.controller('NotificationSettingsController', function ($scope, $http, $location, $route, $routeParams) {
+        $scope.isAdmin = user.hasRole("ROLE_ADMIN");
+        $http({
+            method: 'GET',
+            url: NTF_URL + "/setting/",
+            headers: {
+                'Authorization': 'Bearer ' + readCookie("token"),
+                'Content-Type': 'application/json'
+            },
+        }).then(function successCallback(response) {
+            $scope.settings = response.data;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+
+        $scope.delete = function (setting) {
+            $http({
+                method: 'DELETE',
+                url: NTF_URL + "/setting/?id=" + setting.id,
+                headers: {
+                    'Authorization': 'Bearer ' + readCookie("token"),
+                    'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                setting.deleted = true;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+    });
+
+    job4j.controller('NotificationViewController', function ($scope, $http, $location, $route, $routeParams) {
+        doGet($http, NTF_URL + "/template/", function (data) {
+            $scope.isAdmin = true;
+            $scope.templates = data;
+        })
+        $scope.delete = function (template) {
+            $http({
+                method: 'DELETE',
+                url: NTF_URL + "/template/?id=" + template.id,
+                headers: {
+                    'Authorization': 'Bearer ' + readCookie("token"),
+                    'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                template.deleted = true;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+    });
+
+    job4j.controller('AlgosController', function ($scope, $http, $location, $route, $routeParams) {
+        $('#task_algo').addClass("active");
+        $('#task_algo').show();
+        doGet($http, INTERVIEW_URL + "/interview/algo/", function (data) {
+            $scope.loaded = true;
+            $scope.algos = data;
+        });
+    });
+
+    job4j.controller('AlgoViewController', function ($scope, $http, $location, $routeParams, $sce, $window) {
+        $scope.running = false;
+        $('#task_algo').addClass("active");
+        $('#task_algo').show();
+        doGet($http, INTERVIEW_URL + "/interview/algo/" + $routeParams.id, function (data) {
+            $scope.loaded = true;
+            $scope.algo = data;
+            $scope.html = $sce.trustAsHtml;
+            $scope.description = $sce.trustAsHtml(data.description);
+        });
+
+        $scope.run = function (algo) {
+            $scope.running = true;
+            $http({
+                method: 'POST',
+                url: INTERVIEW_URL + "/interview/algo/run",
+                data: algo,
+                headers: {
+                    'Authorization': 'Bearer ' + readCookie("token"),
+                    'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                $scope.running = false;
+                $scope.result = true;
+                $scope.log = response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+
+        $scope.deleteStage = function(stage) {
+            if (confirm("Удалить эпат?")) {
+                doDelete($http, INTERVIEW_URL + "/stage/?id=" + stage.id, function (data) {
+                    stage.deleted = true;
+                });
+            }
+        };
+    });
+
+    job4j.controller('AlgoUpdateController', function ($scope, $http, $location, $routeParams, $sce, $window) {
+        $('#task_algo').addClass("active");
+        $('#task_algo').show();
+
+        if ($routeParams.id) {
+            doGet($http, INTERVIEW_URL + "/interview/algo/" + $routeParams.id, function (data) {
+                $scope.loaded = true;
+                $scope.algo = data;
+                $scope.id = $routeParams.id;
+                $('#description').val(data.description);
+                $('#description').summernote({height: 300});
+            });
+        } else {
+            $scope.loaded = true;
+            $('#description').summernote({height: 300});
+        }
+
+        $scope.addNewChoice = function() {
+            var newItemNo = $scope.choices.length+1;
+            $scope.choices.push({});
+        };
+
+        $scope.removeChoice = function() {
+            var lastItem = $scope.choices.length-1;
+            $scope.choices.splice(lastItem);
+        };
+
+        $scope.save = function (algo) {
+            algo.description = $("#description").val();
+            $http({
+                method: 'POST',
+                url: INTERVIEW_URL + "/interview/algo/",
+                data: algo,
+                headers: {
+                    'Authorization': 'Bearer ' + readCookie("token"),
+                    'Content-Type': 'application/json'
+                },
+            }).then(function successCallback(response) {
+                $location.path("/algo/" + response.data.id);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+    });
+
+    job4j.controller('ProfileController', function ($scope, $http, $location, $route, $routeParams) {
+        $('#profile').addClass("active");
+        $('#profile').show();
+        doGet($http, OAUTH_URL + "/person/current", function (data) {
+            $scope.person = data;
+        });
+
+        $scope.save = function (person) {
+            $("#profile-form").validator('validate');
+            if (formIsValid("#profile-form")) {
+                $("#profile-form :input").prop("disabled", true);
+                doPost($http, OAUTH_URL + "/person/update", person,
+                    function (data) {
+                        $scope.updated = true;
+                    }
+                );
+            }
+        }
+    });
+</script>
+</body>
+</html>

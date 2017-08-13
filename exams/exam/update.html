@@ -1,0 +1,31 @@
+<div class="row" id="manager-panel-exams" style="display: none;">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-default pull-right">Добавить тест</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Добавить тест</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="usr">Название:</label>
+                    <input type="text" class="form-control" id="name" ng-model="exam.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="usr">Короткое описание:</label>
+                    <input type="text" class="form-control" ng-model="exam.intro" required>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" ng-model="exam.active" required> Опубликовать</label>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Описание:</label>
+                    <textarea class="form-control" rows="20" id="description" ng-model="user.description" required></textarea>
+                </div>
+                <a ng-href="#/exam/view/{{exam.id}}" class="btn btn-default">Назад</a>
+                <button class="btn btn-default pull-right" ng-click="save(exam)">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="row" ng-show="isAdmin">
+    <div class="col-md-12 pull-right">
+        <a ng-href="#/exam/{{exam.id}}/question/update" class="btn btn-default">Добавить вопрос</a>
+        <a ng-href="#/exam/update/{{exam.id}}" class="btn btn-default">Отредактировать</a>
+        <button type="button" class="btn btn-default" ng-click="delete(exam)">Удалить</button>
+        <a ng-href="#/load" class="btn btn-default">Назад</a>
+    </div>
+</div>
+<div class="row" style="padding-top: 10px;">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{exam.name}}
+            </div>
+            <div class="panel-body" data-ng-bind-html="description">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="isAdmin">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    <h3>Список вопросов</h3>
+                </th>
+                <!--<th class="text-center">Прошли</th>-->
+                <th class="text-center">Порядок</th>
+                <th class="text-center" ng-show="isAdmin">Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="(index, question) in questions" ng-hide="question.deleted">
+                <td>
+                    <h4>
+                        <a ng-href="#/question/{{question.id}}">
+                            {{index + 1}}. {{ question.name }}
+                        </a>
+                    </h4>
+                </td>
+                <!--<td class="text-center"><a href="#">6532</a></td>-->
+                <td class="text-center">{{question.pos}}</td>
+                <td class="text-center" ng-show="isAdmin">
+                    <a ng-href="#/exam/{{exam.id}}/question/update/{{question.id}}" class="btn btn-link">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <button class="btn btn-link" ng-click="deleteQuestion(question)">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="usr">Короткое название:</label>
+                    <input type="text" class="form-control" id="name" ng-model="task.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="pos">Позиция:</label>
+                    <input type="number" class="form-control" id="pos" ng-model="task.pos" required>
+                </div>
+                <div class="form-group">
+                    <label for="sel1">Тип поля ввода:</label>
+                    <select class="form-control" ng-model="task.type" ng-change="updateForm()">
+                        <option value="SINGLE_LINE">Однострочное поле</option>
+                        <option value="ARRAY">Многострочное поле</option>
+                        <option value="INT">Число</option>
+                        <option value="DATE">Дата</option>
+                        <option value="LIST">Список</option>
+                        <option value="MULTILIST">Список со множественным выбором</option>
+                        <option value="ATTACH">Файл</option>
+                        <option value="TASK">Алгоритмическая задача</option>
+                        <option value="TEST">Тест</option>
+                    </select>
+                </div>
+                <div class="input-group" style="margin-bottom: 15px;" data-ng-repeat="(index, value) in task.values"
+                     ng-show="task.type == 'LIST' || task.type == 'MULTILIST'">
+                    <input type="hidden" ng-model="value.id">
+                    <input type="text" class="form-control" placeholder="Значения" ng-model="value.value">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="addNewChoice()">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <button class="btn btn-default" type="button" ng-show="task.values.length > 1" ng-click="removeChoice(index)">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </span>
+                </div>
+                <div class="form-group" ng-show="task.type == 'TASK'" style="overflow-y: scroll; height: 200px;">
+                    <table id="table" class="table table-bordered" ng-show="loadedAlgo">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-radio="true"></th>
+                            <th data-field="name">Название</th>
+                            <th data-field="starts">Сложность</th>
+                            <th>Описание</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="algo in algos">
+                            <input type="hidden" ng-model="task.values[0].info" ng-init="task.values[0].info = algo.name" />
+                            <td><input type="radio" ng-value="algo.id" ng-model="task.values[0].value"></td>
+                            <td>{{ algo.name }}</td>
+                            <td>{{ algo.level }}</td>
+                            <td><div data-ng-bind-html="html(algo.description)"></div></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group" ng-show="task.type == 'TEST'" style="overflow-y: scroll; height: 200px;">
+                    <table id="table" class="table table-bordered" ng-show="loadedExam">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-radio="true"></th>
+                            <th data-field="name">Название</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="exam in exams">
+                            <input type="hidden" ng-model="task.values[0].info" ng-init="task.values[0].info = exam.name" />
+                            <td><input type="radio" ng-value="exam.id" ng-model="task.values[0].value"></td>
+                            <td>{{ exam.name }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group">
+                    <label>Условия:</label>
+                    <div class="controls" style="margin-bottom: 15px;" data-ng-repeat="(index, filter) in task.filters">
+                        <input type="hidden" ng-model="filter.id">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <select class="form-control" style="width: 150px;" ng-model="filter.key">
+                                    <option value="EQ">Равно</option>
+                                    <option value="NOT_EQ">Не равно</option>
+                                    <option value="CONTAINTS">Содержит</option>
+                                    <option value="NOT_CONTAINTS">Не содержит</option>
+                                    <option value="GREAT">Больше</option>
+                                    <option value="LESS">Меньше</option>
+                                </select>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Значение" ng-model="filter.value">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" ng-click="addFilter()">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                                <button class="btn btn-default" type="button" ng-show="task.filters.length > 1" ng-click="removeFilter(index)">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Описание задания:</label>
+                    <textarea class="form-control" rows="5" id="description"></textarea>
+                </div>
+                <a ng-href="#/vacancy/{{vacancyId}}" class="btn btn-default">Назад</a>
+                <button class="btn btn-default" ng-click="save(task)">Предпросмотр</button>
+                <button class="btn btn-default pull-right" ng-click="save(task)">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+
+    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/modern-business.css" rel="stylesheet">
+
+    <link href="../css/job4j.css" rel="stylesheet">
+
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/job4j.js?v=31052017"></script>
+    <script>
+        $(function () {
+            CONTEXT = '../';
+            $("#header").load(
+                    "../header.html?v=31052017",
+                    function() {
+                        initHeader();
+                        loadUser();
+                    }
+            );
+            $("#footer").load("../footer.html?v=31052017");
+            $("#courses").load("courses.html");
+        });
+    </script>
+    <style>
+        .anchor {
+            display: block;
+            height: 100px; /*same height as header*/
+            margin-top: -100px; /*same height as header*/
+            visibility: hidden;
+        }
+
+        .nav-tabs {
+            border-bottom: 2px solid #DDD;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            border-width: 0;
+        }
+
+        .nav-tabs > li > a {
+            border: none;
+            color: #666;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+            border: none;
+            color: #4285F4 !important;
+            background: transparent;
+        }
+
+        .nav-tabs > li > a::after {
+            content: "";
+            background: #4285F4;
+            height: 2px;
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            bottom: -1px;
+            transition: all 250ms ease 0s;
+            transform: scale(0);
+        }
+
+        .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after {
+            transform: scale(1);
+        }
+
+        .tab-nav > li > a::after {
+            background: #21527d none repeat scroll 0% 0%;
+            color: #fff;
+        }
+
+        /*.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }*/
+        .table tbody > tr > td.vert-align {
+            vertical-align: middle;
+        }
+
+        .equal {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .equal > div[class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media screen and (min-width: 768px) {
+            .equal2, .equal2 > div[class*='col-'] {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                flex:1 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<div id="header"></div>
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom"
+     style="margin-top: 50px;background-color: #FFFFFF; border-color: #FFFFFF; z-index: 1" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#actcourses">Курсы</a></li>
+                        <li role="presentation"><a href="#price">Время прохождения</a></li>
+                        <li role="presentation"><a href="#discount">Скидки и бонусы</a></li>
+                        <li role="presentation"><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container" style="margin-top: 40px;">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Курсы
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Главная</a>
+                </li>
+                <li class="active">Курсы</li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Blog courses 1st line -->
+    <div class="row">
+        <div class="col-md-12">
+            <span class="anchor" id="actcourses"></span>
+        </div>
+    </div>
+
+    <div class="row equal">
+
+        <div class="col-md-4">
+            <div class="offer offer-radius offer-primary">
+                <!-- Panel Java Junior -->
+                <a href="java_with_zero_to_job.html" style="text-decoration: none; color:black">
+
+                    <div class="shape">
+                        <div class="shape-text">
+                            <p>HOT</p>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <br/>
+                        <h1 align="center" class="text-info">
+                            Java
+                        </h1>
+                        <h4 align="center" class="text-info">
+                            Middle level
+                        </h4>
+                        <br/>
+                        <h4>
+                            <i class="fa fa-fw fa-university"></i>
+                            С нуля до трудоустройства
+                        </h4>
+                        <p>
+                            Курс начинается с основ синтаксиса языка и плавно переходит к темам серверной
+                            разработки.
+                            Рассматриваются темы: Java 8, Maven, Git, JUnit, SQL, Servlet, JSP, Hibernate,
+                            Spring (Boot, Data, Security), JAXB, SOAP, REST.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+                <!-- Panel QA Automation -->
+
+        <div class="col-md-4">
+            <div class="offer offer-radius offer-primary">
+                <a href="qa.html" style="text-decoration: none; color:black">
+
+                    <div class="shape">
+                        <div class="shape-text">
+                            <p>HOT</p>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <br/>
+                        <h1 align="center" class="text-info">
+                            QA
+                        </h1>
+                        <h4 align="center" class="text-info">
+                            Automation
+                        </h4>
+                        <br/>
+                        <h4><i class="fa fa-fw fa-bug"></i>
+                            Тестирование ПО
+                        </h4>
+                        <p>
+                            Курс посвящен методологии тестирования, подходам к написанию автоматических тестов и
+                            инструментам(библиотеки, фрейморки).
+                            Рассмотрены темы: виды тестирования,
+                            JUnit, Mockito, Selenium, JMeter, SOAP UI.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Panel Java Middle -->
+        <div class="col-md-4">
+            <div class="offer offer-radius offer-primary">
+                <a href="java_from_junior_to_middle.html" style="text-decoration: none; color:black">
+                    <div class="shape">
+                        <div class="shape-text">
+                            <p>HOT</p>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <br/>
+                        <h1 align="center" class="text-info">
+                            Java
+                        </h1>
+                        <h4 align="center" class="text-info">
+                            Level up
+                        </h4>
+                        <br/>
+                        <h4>
+                            <i class="fa fa-fw fa-star"></i>
+                            JEE. Гуру уровень.
+                        </h4>
+                        <p>
+                            Курс начинается с азов Servlet и последовательно переходит к фреймворку Spring.
+                            Включены темы: ORM(Hibernate), NoSQL, Caches. В заключительных главах рассмотрены
+                            шаблоны проектирования и архитектурные шаблоны.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Blog courses 2nd line -->
+
+    <div class="row equal">
+
+        <!-- Panel Beginner Free -->
+        <div class="col-md-4">
+            <div class="offer offer-radius offer-primary">
+                <a href="java_beginner.html" style="text-decoration: none; color:black">
+
+                    <div class="shape" style="border-color: transparent #259fff transparent transparent;">
+                        <div class="shape-text">
+                            <p>Free</p>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <br/>
+                        <h1 align="center" class="text-info">
+                            Java
+                        </h1>
+                        <h4 align="center" class="text-info">
+                            Beginner Free
+                        </h4>
+                        <br/>
+                        <h4>
+                            <i class="fa fa-fw fa-book"></i>
+                            Java в аналогиях
+                        </h4>
+                        <p>
+                            Бесплатный вводный курс по Java, рассчитанный на тех, кто не знаком с языками программирования.
+                            Создание первой программы, изучение синтаксиса языка и многое другое.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Panel Free Java -->
+        <div class="col-md-4">
+            <div class="offer offer-radius offer-primary">
+                <a href="java_way_from_student_to_master.html" style="text-decoration: none; color:black">
+                    <div class="shape" style="border-color: transparent #259fff transparent transparent;">
+                        <div class="shape-text">
+                            <p>Free</p>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <br/>
+                        <h1 align="center" class="text-info">
+                            Java
+                        </h1>
+                        <h4 align="center" class="text-info">
+                            Advanced Free
+                        </h4>
+                        <br/>
+                        <h4><i class="fa fa-fw fa-graduation-cap"></i>
+                            Путь Java
+                        </h4>
+                        <p>
+                            Это бесплатный курс, который составлен в виде последовательных уроков в которых
+                            разрабатывается приложение от консольной версии до серверной.
+                            Курс освещает все темы необходимые для начала вашего пути программиста.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Panel Work -->
+        <div class="col-md-4">
+            <div class="offer offer-radius offer-primary">
+                <a href="work_help.html" style="text-decoration: none; color:black">
+                    <div class="shape" style="border-color: transparent #259fff transparent transparent;">
+                        <div class="shape-text">
+                            <p>PRO</p>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <br/>
+                        <h1 align="center" class="text-info">
+                            Hire, Resume, Interview
+                        </h1>
+                        <h4 align="center" class="text-info">
+                            Помощь в трудоустройстве
+                        </h4>
+                        <br/>
+                        <h4><i class="fa fa-fw fa-dollar"></i>
+                            Получи работу мечты!
+                        </h4>
+                        <p>
+                            Прокачай свое резюме, найти слабые места в знаниях, подготовься к собеседованию,
+                            получи "офер".
+                            Подробности ...
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Blog courses in development
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+            <span class="anchor" id="devcourses"></span>
+            <h3>Курсы в разработке</h3>
+            <br/>
+        </div>
+    </div>
+
+    <div class="row equal">
+
+        <!-- Panel Micro-services
+        <div class="col-md-4">
+            <div class="offer offer-radius">
+                <a href="jvm-groovy-scala-kotlin.html" style="text-decoration: none; color:black">
+                    <div class="offer-content">
+                        <br/>
+                        <h2 align="center">
+                            Micro-services
+                        </h2>
+                        <h4 align="center">
+                            Groovy, Scala, Kotlin
+                        </h4>
+                        <br/>
+                        <h4>
+                            <i class="fa fa-fw fa-space-shuttle"></i>
+                            JVM языки программирования
+                        </h4>
+                        <p>
+                            В курсе рассматриваются языки основанные на JVM.
+                            По каждому языку - IDE, Build tools, ORM, Web, Testing.
+                            Финальный проект собирает эти языки в microservices.
+                            Для Java программистов, ищущих новые пути развития.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Blog courses in development 2nd line
+
+    <div class="row equal">
+
+        <!-- Panels HTML
+        <div class="col-md-4">
+            <div class="offer offer-radius">
+                <a href="free-html.html" style="text-decoration: none; color:black">
+                    <div class="offer-content">
+                        <br/>
+                        <h2 align="center">
+                            HTML
+                        </h2>
+                        <h4 align="center">
+                            Free
+                        </h4>
+                        <br/>
+                        <h4>
+                            <i class="fa fa-html5"></i>
+                            Синтаксис HTML
+                        </h4>
+                        <p>
+                            В бесплатном курсе рассматривается
+                            синтаксис языка HTML, структура и теги,
+                            создание заголовков, абзацев, таблиц и
+                            форм. Рекомендуется для просмотра
+                            перед освоением основного курса по
+                            верстке.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="offer offer-radius">
+                <a href="web.html" style="text-decoration: none; color:black">
+
+                    <div class="offer-content">
+                        <br/>
+                        <h2 align="center">
+                            Путь верстальщика
+                        </h2>
+                        <h4 align="center">
+                            HTML5, CSS3, JS, jQuery, AngularJS
+                        </h4>
+                        <br/>
+                        <h4>
+                            <i class="fa fa-css3"></i>
+                            Универсальный курс по верстке
+                        </h4>
+                        <p>
+                            Курс по веб-разработке
+                            включает в себя подробные лекции по
+                            трем основным языкам, которыми должен
+                            владеть верстальщик: HTML, CSS и
+                            jQuery. Обучение проводится на примерах
+                            из реальных проектов.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        -->
+
+                <!-- Panel Job tasks
+        <div class="col-md-4">
+            <div class="offer offer-radius">
+                <a href="java_course_test.html" style="text-decoration: none; color:black">
+                    <div class="offer-content">
+                        <br/>
+                        <h2 align="center">
+                            Job
+                        </h2>
+                        <h4 align="center">
+                            Interview
+                        </h4>
+                        <br/>
+                        <h4><i class="fa fa-fw fa-child"></i>Задачи на собеседовании</h4>
+                        <p>
+                            В курсе собран список практических задач, которые вы можете встретить на
+                            собеседовании.
+                            Задачи проверяют знания синтаксиса и алгоритмов.
+                            В курсе используются автоматические тесты для проверки решений.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+  <!-- Panel Business
+    <div class="col-md-4">
+        <div class="offer offer-radius offer-primary">
+            <a href="java_from_middle_to_senior.html" style="text-decoration: none; color:black">
+
+                <div class="offer-content">
+                    <br/>
+                    <h1 align="center" class="text-info">
+                        Business
+                    </h1>
+                    <h4 align="center" class="text-info">
+                        Plan
+                    </h4>
+                    <br/>
+                    <h4><i class="fa fa-fw fa-building"></i>
+                        Развитие программиста
+                    </h4>
+                    <p>
+                        Каждый профессионал на разных этапах своего карьерного роста ощущает потолок
+                        возможности.
+                        В программировании - это шаги Junior, Middle и Senior. Вспомните себя 5 лет назад.
+                        Новый проект - это новые возможности, интересные задачи.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Panel VIP
+    <div class="col-md-4">
+        <div class="offer offer-radius offer-primary">
+            <a href="vip.html" style="text-decoration: none; color:black">
+
+                <div class="offer-content">
+                    <br/>
+                    <h1 align="center" class="text-info">
+                        VIP
+                    </h1>
+                    <h4 align="center" class="text-info">
+                        Help
+                    </h4>
+                    <br/>
+                    <h4><i class="fa fa-fw fa-lightbulb-o"></i>
+                        VIP+, Персональный план
+                    </h4>
+                    <p>
+                        Иногда возникают ситуации, когда у вас есть свое видение процесса обучения,
+                        то есть вы хотите восполнить или улучшить свои знания в конкретной области
+                        программирования,
+                        библиотеке или фреймворке.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Blog Information -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="price"></span>
+                    <br/><h3>Время прохождения</h3>
+                    Время прохождения курса не привязано к его стоимости. Каждый слушатель должен освоить весь
+                    материал курса. Если вам понадобится больше времени для прохождения курсу,
+                    вы ничего не доплачиваете, а продолжаете заниматься дальше.
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="plan"></span>
+                    <h3 id="join">Записаться на курс</h3>
+                    Для того чтобы записаться на курс, необходимо заполнить
+                    <a target="_blank" href="https://yadi.sk/d/bKxxxLvvxbG2q">анкету</a> и отправить ее на почту
+                    parsentev@yandex.ru.
+                    Далее необходимо пройти первичное собеседование по Skype: petrarsentev.<br/><br/>
+                    Итак, ваши действия должны быть такими:<br/>
+                    <ol>
+                        <li>
+                            Заполнить анкету и отправить на почту. В письме обязательно указать время и дату,
+                            когда вы можете поговорить по скайпу голосом. Преварительно проверьте настройки
+                            микрофона.
+                        </li>
+                        <li>
+                            Добавиться в Skype.
+                        </li>
+                    </ol>
+                    На первичном собеседовании вы можете уточнить любые вопросы, рассказать о себе, спланировать
+                    расписание занятий.
+                    Время проведения собеседований: с 8:00 до 22:00 по Московскому часовому поясу.
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="discount"></span>
+                    <h3>Скидки и бонусы</h3>
+                    <ul>
+                        <li>
+                            Вы можете разместить пост в социальной сети VK.com с текстом -
+                            Я прохожу обучение здесь http://job4j.ru/ - расскажу подробности.
+                            И получите 500 рублей скидки.
+                        </li>
+                        <li>
+                            Если по вашей рекоммендации придет новый ученик Вы и новый ученик получаете по 500
+                            рублей скидки.
+                        </li>
+                        <li>
+                            Распостраняя любую информацию про курс вы можете значительно снизить стоимость обучения.
+                        </li>
+                        <li>
+                            После окончания курса мы помогаем с составлением резюме, сопроводительным письмом и
+                            выбором вакансий.
+                            Поддерживаем на всех стадиях трудоустройства.
+                        </li>
+                        <li>
+                            По желанию ученик может принять участия в разработки портала job4j и получить реальный
+                            коммерческий опыт.
+                        </li>
+                    </ul>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog FAQ -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <span class="anchor" id="faq"></span>
+            <h3>FAQ</h3>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse1">
+                                Я буду заниматься индивидуально?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да, всё обучение происходит в индивидуальном порядке, включая проверку заданий и сдачу
+                            теории голосом.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse3">
+                                Сколько времени занимает обучение?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Время обучения зависит от вашей начальной подготовки и выбранной программы.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse4">
+                                Какая цена курса?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Стоимость обучения зависит от выбранного курса и программы.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse5">
+                                Когда начинается обучение?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Сразу после прохождения первичного собеседования.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse7">
+                                Какие формы оплаты возможны?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Через электронные системы, карточками.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse8">
+                                Как записаться на курс?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Заполнить и прислать анкету.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse9">
+                                Как с Вами связаться?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            email : parsentev@yandex.ru
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse10">
+                                Можно ли начать проходить курс не с начала?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Нет. Обучение должно быть с первой ступени.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse11">
+                                После окончания будет ли выдан сертификат?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse11" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Вы можете указать мои контактные данные для получения рекомендации для
+                            работадателя.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse12">
+                                Можно ли задавать дополнительные вопросы или задания?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse12" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse13">
+                                Кто проводит обучение?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse13" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Сейчас обучение провожу Я (Петр Арсентьев), а так же мне помогает Олег Арюков.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse14">
+                                Как проверяется код?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse14" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Есть стандарты описаные в документации.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse15">
+                                Будет ли помощь при поиске работы?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse15" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse16">
+                                Помогаете ли вы составить резюме?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse16" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse17">
+                                Подготавливаете ли вы к собеседования?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse17" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Да.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+</div>
+
+
+</body>
+
+</html>

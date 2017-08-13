@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../../img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+
+    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/modern-business.css" rel="stylesheet">
+
+    <link href="../../css/job4j.css" rel="stylesheet">
+    <link href="../../css/start.css" rel="stylesheet">
+
+    <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/job4j.js?v=31052017"></script>
+    <script>
+        $(function () {
+            CONTEXT = '../../';
+            $("#header").load(
+                    CONTEXT + "header.html?v=31052017",
+                    function() {
+                        initHeader();
+                        loadUser();
+                    }
+            );
+            $("#footer").load("../../footer.html?v=31052017");
+            $("#courses").load("../courses.html");
+            $("#modal").load("modal.html");
+        });
+
+        <!-- Script for carousel -->
+        $(document).ready(function () {
+            $('#myCarousel').carousel({
+                interval: 0
+            });
+
+            var clickEvent = false;
+            $('#myCarousel').on('click', '.nav a', function () {
+                $('video').trigger('pause');
+                clickEvent = true;
+                $('.nav li').removeClass('active');
+                $(this).parent().addClass('active');
+            }).on('slid.bs.carousel', function (e) {
+                if (!clickEvent) {
+                    var count = $('.nav').children().length - 1;
+                    var current = $('.nav li.active');
+                    current.removeClass('active').next().addClass('active');
+                    var id = parseInt(current.data('slide-to'));
+                    if (count == id) {
+                        $('.nav li').first().addClass('active');
+                    }
+                }
+                clickEvent = false;
+            });
+        });
+    </script>
+    <style>
+        .anchor {
+            display: block;
+            height: 100px; /*same height as header*/
+            margin-top: -100px; /*same height as header*/
+            visibility: hidden;
+        }
+
+        /*.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }*/
+        .table tbody > tr > td.vert-align {
+            vertical-align: middle;
+        }
+
+        body {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="container" style="margin-top: 40px;">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Вводный курс "Java в аналогиях"
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">Главная</a>
+                </li>
+                <li class="active">Курсы</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Navigation bar-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pagination">
+                <li style="width:55px"><a href="../java_beginner.html"><i class="fa fa-fw fa-home"></i></a></li>
+                <li><a href="lesson_11.html">«</a></li>
+                <li><a href="lesson_1.html">1</a></li>
+                <li><a href="lesson_2.html">2</a></li>
+                <li><a href="lesson_3.html">3</a></li>
+                <li><a href="lesson_4.html">4</a></li>
+                <li><a href="lesson_5.html">5</a></li>
+                <li><a href="lesson_6.html">6</a></li>
+                <li><a href="lesson_7.html">7</a></li>
+                <li><a href="lesson_8.html">8</a></li>
+                <li><a href="lesson_9.html">9</a></li>
+                <li><a href="lesson_10.html">10</a></li>
+                <li><a href="lesson_11.html">11</a></li>
+                <li class="active"><a href="#">12<span class="sr-only">(current)</span></a></li>
+                <li><a href="lesson_13.html">13</a></li>
+                <li><a href="lesson_14.html">14</a></li>
+                <li><a href="lesson_15.html">15</a></li>
+                <li><a href="lesson_13.html">»</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Carousel block -->
+
+    <div class="panel panel-primary">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+                <!-- First slide -->
+
+                <div class="item active">
+                    <div class="col-md-12">
+                        <div class="row">
+
+                            <!-- Embedded video -->
+
+                            <div class="col-md-6" style="margin-left: -20px !important">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video class="video-js vjs-default-skin embed-responsive-item" controls
+                                           preload="none"
+                                           data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }'
+                                           onclick="this.paused?this.play():this.pause();">
+                                        <source src="http://job4j.ru:8888/TrackStudio/video/8621/ae84b50d58634f6d015a3401b5b301d3"
+                                                type="video/mp4"/>
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Video description -->
+
+                            <div class="col-md-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <h2>Урок №12. Массивы.</h2> <br/>
+                                    <p> В этом уроке мы расмотрим массивы: что такое массив, как его инициализировать, какие
+                                        действия можно производить с элементами массива, как заполнять двумерный массив,
+                                        также поговорим о копировании и сортировке массивов.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-caption">
+                    </div>
+                </div><!-- End first slide -->
+
+                <!-- Second slide - Tests -->
+
+                <div class="item">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <!-- Test 1 -->
+                            <div class="col-md-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <h2>Тест 1</h2> <br/>
+                                    <p>В каком случае массив объявлен неверно</p>
+                                    <ol><li>int a = {1, 2, 3};</li>
+                                        <li>int[] b = {{1, 2}, {3, 4}};</li>
+                                        <li>int[] c = new int[]{1, 2, 3};</li>
+                                        <li>int[][] d = {{1, 2}, {3, 4}};</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <!-- Test 2 -->
+                            <div class="col-md-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <h2>Тест 2</h2> <br/>
+                                    <p>Какие действия мы не можем производить с массивами: <br/>
+                                    <ol><li>Изменять значения элементов массива</li>
+                                        <li>Изменять размер массива после создания</li>
+                                        <li>Скопировать часть элементов массива</li>
+                                        <li>Обратиться к любому элементу по индексу</li>
+                                    </ol>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-caption">
+                    </div>
+                </div><!-- End second slide -->
+
+                <!-- Third slide - Tasks -->
+
+                <div class="item">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <!-- Task 1-2 -->
+                            <div class="col-md-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <h3>Задача 1</h3> <br/>
+                                    <p>Написать метод min, который принимает массив int[], а возвращает индекс элемента
+                                        имеющий миниальное значение.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Task 3 -->
+                            <div class="col-md-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <h3>Задача 2</h3> <br/>
+                                    <p>Написать метод arithmetic, который принимает массив int[] и возвращает
+                                        среднее арифметическое значение его элементов типа double.
+                                        Например средним арифметическим значением
+                                        для массива {1, 2, 3, 4} будет 2.5.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-caption">
+                    </div>
+                </div><!-- End third slide -->
+
+                <!-- Fourth slide - Answers -->
+
+                <div class="item">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <!-- Test answers -->
+                            <div class="col-md-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <h3>Ответы:</h3>
+                                    <h4>Тест 1</h4>
+                                    <p>
+                                    Вариант 1 не верен, т.к. не указаны квадратные скобки<br/>
+                                    Вариант 2 не верен, т.к. объявлен одномерный массив, вместо двумерного.
+                                    </p>
+                                    <h4>Тест 2</h4>
+                                    <p> Вариант 2 не верен, мы не можем изменять размер массива после его создания.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Tasks answers -->
+                            <div class="col-md-6">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <h4>Задача 1</h4>
+<!-- Embedded code -->
+<pre style="overflow: auto; max-height: 100px;"><code class="white-space:pre-wrap">public int min(int[] array) {
+    int min = INTEGER.MAX_VALUE;
+    int result = 0;
+    for (int i = 0; i < array.length; i++) {
+        if (array[i] < min) {
+           min = array[i];
+           result = i;
+        }
+    }
+    return result;
+}</code></pre>
+                                    <h4>Задача 2</h4>
+<pre style="overflow: auto; max-height: 100px;"><code class="white-space:pre-wrap">public double arithmetic(int[] array) {
+    int sum = 0;
+    for (int i = 1; i < array.length; i++) {
+        sum += array[i];
+    }
+    return (double)sum / array.length;
+}</code></pre>
+<!-- End of embedded code -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-caption">
+                    </div>
+                </div><!-- End Item -->
+
+            </div><!-- End Carousel Inner -->
+
+            <!-- Caruosel switch slide bar -->
+            <ul class="nav nav-pills nav-justified">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#"><strong>Видео</strong></a>
+                </li>
+                <li data-target="#myCarousel" data-slide-to="1"><a href="#"><strong>Тесты</strong></a></li>
+                <li data-target="#myCarousel" data-slide-to="2"><a href="#"><strong>Задачи</strong></a></li>
+                <li data-target="#myCarousel" data-slide-to="3"><a href="#"><strong>Ответы</strong></a></li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- End Carousel -->
+
+    <!-- Blog literature -->
+    <div class="row">
+        <div class="col-md-9">
+            <br/>
+            <h3>
+                Список дополнительной литературы:
+            </h3>
+            <br/>
+            <ol>
+                <li>Хорстманн К., Корнелл Г. - Java. Библиотека профессионала. Том 1. Основы (10-е издание). Глава 3.10</li>
+                <li>Герберт Шилдт - Java 8. Полное руководство. 9-е издание. Часть 1. Глава 3. Стр. 94-101 </li>
+            </ol>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-success btn-outlined pull-right" href="#primary" data-toggle="modal">
+                <i class="glyphicon glyphicon-question-sign"></i><strong> Нужна помощь?</strong>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal window -->
+    <div id="modal"></div>
+
+<!-- Footer -->
+<div id="footer"></div>
+</div>
+</body>
+
+</html>

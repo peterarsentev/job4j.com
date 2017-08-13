@@ -1,0 +1,133 @@
+/*Carousel css styles*/
+#myCarousel .nav a small {
+    display: block;
+}
+
+#myCarousel .nav {
+    background: #eee;
+}
+
+.nav-pills > li > a {
+    border-radius: 0;
+}
+/*End of carousel css styles*/
+
+/*Styles for embedding videos and text*/
+.embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow:hidden;
+}
+
+.embed-responsive .embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.embed-responsive-16by9 {
+    height: 312px;
+    overflow: auto;
+}
+/*End of styles for embedding videos*/
+
+
+/*Styles for video settings*/
+video{
+    -webkit-filter: brightness(108.5%);
+}
+
+video::-webkit-media-controls {
+    overflow: hidden !important
+}
+video::-webkit-media-controls-enclosure {
+    width: calc(100% + 32px);
+    margin-left: auto;
+}
+/*end of styles for video settings*/
+
+/*Styles for modal window*/
+.modal-header-primary {
+    color:#fff;
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #428bca;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal {
+    top: 20% !important;
+}
+
+.features-table li {
+    background: none repeat scroll 0 0;
+    border-left: 2px solid #428bca;
+    border-bottom: 2px solid #428bca;
+    font-size: 16px;
+    padding: 15px 24px;
+    list-style:none;
+}
+
+.features-table-free li, .features-table-paid li {
+    background: none repeat scroll 0 0;
+    border-bottom: 2px solid #428bca;
+    border-right: 2px solid #428bca;
+    border-left: 2px solid #428bca;
+    text-align:center;
+    padding: 15px 21px;
+    list-style:none;
+}
+
+.features-table h1, .features-table-free h1, .features-table-paid h1 {
+    background: #428bca none repeat scroll 0 0;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+    padding: 10px 0px;
+    font-size:16px !important;
+    text-align: center;
+}
+.features-table h1 {
+    border-top-left-radius: 20px;
+    text-align:center;
+}
+.features-table-paid h1 {
+    border-top-right-radius: 20px;
+    border-left: 2px solid #d4d4d4;
+}
+
+.fa.fa-check {
+    color: #2cc14f;
+}
+
+.fa{
+    font-size:30px;
+}
+.no-padding{
+    padding:0;
+}
+ul{
+    padding:0;
+}
+
+body {
+    counter-reset: section;
+}
+.features-table li::before {
+    counter-increment: section;
+    content: "" counter(section) ". ";
+}
+/*End of styles for modal window help*/
+
+/*Styles for navigation bar*/
+.pagination>li>a, .pagination>li>span { border-radius: 50% !important; width: 45px; margin: 0 5px;}

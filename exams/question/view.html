@@ -1,0 +1,51 @@
+<div class="row" ng-show="isAdmin">
+    <div class="col-md-12 pull-right">
+        <a ng-href="#/exam/view/{{question.exam.id}}" class="btn btn-default">К тесту</a>
+        <a ng-href="#/question/{{question.id}}/option/update" class="btn btn-default">Добавить вариант</a>
+        <a ng-href="#/exam/{{question.exam.id}}/question/update/{{question.id}}" class="btn btn-default">Отредактировать</a>
+        <button type="button" class="btn btn-default pull-right" ng-click="delete(exam)">Удалить</button>
+    </div>
+</div>
+<div class="row" style="padding-top: 10px;">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{question.name}}
+            </div>
+            <div class="panel-body">
+                <div data-ng-bind-html="description"></div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Вариант</th>
+                        <th>Корректность</th>
+                        <th>Действия</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="option in options" ng-hide="option.deleted">
+                        <td> {{ option.pos }}. {{ option.description }}</td>
+                        <td> {{ option.correct }}</td>
+                        <td>
+                            <a ng-href="#/question/{{question.id}}/option/update/{{option.id}}" class="btn btn-link">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                            <button class="btn btn-link" ng-click="deleteOpt(option)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Рекомендации
+            </div>
+            <div class="panel-body">
+                <div data-ng-bind-html="hint"></div>
+            </div>
+        </div>
+    </div>
+</div>

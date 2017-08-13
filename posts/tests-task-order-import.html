@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+
+    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/modern-business.css" rel="stylesheet">
+
+    <link href="../css/job4j.css" rel="stylesheet">
+
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/job4j.js?v=31052017"></script>
+    <script>
+        $(function () {
+            CONTEXT = '../';
+            $("#header").load(
+                    CONTEXT + "header.html?v=31052017",
+                    function() {
+                        initHeader();
+                        loadUser();
+                    }
+            );
+            $("#footer").load("../footer.html?v=31052017");
+            $("#courses").load("courses.html");
+        });
+    </script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div id="header"></div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                <p id="post-title">Тестовое задание. Senior Java Developer.</p>
+                <small>Автор: Петр Арсентьев</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Главная</a>
+                </li>
+                <li><a href="../blogs.html">Статьи</a></li>
+
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Blog Post -->
+            <hr>
+            <!-- Preview Image -->
+            <img id="post-image" class="img-responsive" src="../img/brokers-pic510-510x340-15795.jpg" alt="">
+
+            <hr>
+            <!-- Post Content -->
+            <p id="post-content">
+            <p>
+                Когда я начинаю заниматься с новым учеником, первое, что мне нужно знать, &ndash; это его опыт устройства на работу и опыт решения тестовых заданий, которые ему при этом предлагались. Это дает мне первичную информацию о целях ученика. В основном тестовые задания представляют собой однотипные задачи либо на знание технологий, либо на демонстрацию знаний алгоритмов. Обычно это скучные мини-проекты &ndash; их выдают, чтобы проверить, как человек оформляет код, пишет ли тесты и может ли в целом нормально решать типовые задачи.
+            </p>
+            <p>
+                По своему опыту я могу сказать, что если вам прислали тестовое задание, есть два варианта: либо у вас мало опыта, либо контора эта не очень хорошая. Почему это так? Во-первых, у опытного разработчика должны быть свои наработки, проекты, которые можно показать.
+                Во-вторых, по тестовому заданию можно судить только о том, что человек что-то может сделать, но не больше. И не факт, что вообще задание выполнил он сам. Например, мое первое тестовое задание я выполнил при помощи друга :).
+            </p>
+            <p>
+                Месяц назад я стал заниматься с новым учеником, который уже пробовал устраиваться на работу. Ему выдали тестовое задание.
+                Это задание привлекло мое внимание по нескольким причинам:<br/>
+                1. Позиция, на которую претендовал ученик, была Senior developer.<br/>
+                2. Тема тестового &ndash; обработка заказов на бирже.<br/>
+                3. Одно из требований &ndash; высокая производительность. Время исполнения программы должно быть в районе 6 секунд.<br/>
+                4. Заработная плата на данную позицию начиналась от 150 000 рублей.<br/>
+                То есть в этом задании есть все: знакомая тема и вызов (смогу ли я?).
+            </p>
+            <p>
+                <b>Условия тестового задания</b><br/><br/>
+                Я не могу выложить подробный текст задания во избежание каких-либо проблем с фирмой. Постараюсь изложить условия своими словами,
+                чтобы оно отображало основную суть задания.<br/><br/>
+
+                Дано: XML-файл, размер файла 205Mb. Файл состоит из заявок на покупку и продажу акций.
+                Заявки могут как выставляться, так и сниматься.<br/>
+            <ul>
+                <li>tag &ndash; AddOrder &ndash; заявка выставлена</li>
+                <li>tag &ndash; DeleteOrder &ndash; заявка снята</li>
+            </ul>
+
+            Пример выставления заявки:<br/>
+            <pre class="brush: xml;">
+                    &lt;AddOrder book=\"stock-1\" operation=\"SELL\" price=\"100.50\" volume=\"81\" orderId=\"1\" /&gt;
+                </pre>
+            <p>
+            <ul>
+                <li>tag &ndash; book &ndash; идентификатор акции</li>
+                <li>tag &ndash; operation &ndash; тип операции, покупка/продажа</li>
+                <li>tag &ndash; price &ndash; цена</li>
+                <li>tag &ndash; volume &ndash; объем заявки, сколько лотов (акций) купить/продать</li>
+                <li>tag &ndash; id &ndash; идентификатор заявки</li>
+            </ul>
+
+            Требуемые задачи:<br/>
+            1. Распарсить входной файл.<br/>
+            2. Разбить заявки по группам акций.<br/>
+            3. Сделать агрегацию заявок с одинаковой ценой.<br/>
+            4. Сделать сопоставление заявок купли/продажи.<br/>
+            Например:<br/>
+            Акция 1. Заявка на покупку 10 лотов по цене 32 рубля. Заявка на продажу 10 лотов по цене 30 рублей.<br/>
+            Такие заявки должны сопоставиться и удалиться из общей группы. <br/>
+            Общий принцип: цена покупки >= цена продажи. И наоборот: цена продажи <= цена покупки.<br/>
+            5. Вывести на экран биржевой "стакан" всех групп акций.<br/><br/>
+
+            Необходимые условия:
+            <ul>
+                <li>Использовать только средства, входящие в пакет Java SE</li>
+                <li>Скорость обработки ~ 6 сек.</li>
+                <li>Качество кода</li>
+            </ul>
+
+            </p>
+            <p>
+                Первое, с чего я начал решать задачу, &ndash; это определение частей кода, которые можно выполнить параллельно.
+                За счет этого должна увеличиться скорость выполнения программы.
+                Из задания понятно, что вся программа состоит из двух основных блоков:<br/>
+                1. Парсинг входного файла.<br/>
+                2. Обработка полученных данных.
+            </p>
+            <p>
+                Для парсинга XML-файла обычно используется два разных подхода:
+            <ul>
+                <li>Через поток. Решение SAX, StAX</li>
+                <li>Через память. Решение DOM</li>
+            </ul>
+
+            Поскольку нам нужно быстрое решение, я попробовал сделать это через SAX.
+            Я не стал решать задачу целиком. Сначала я хотел проверить, сколько времени займет парсинг файла.
+            К моему разочарованию время было неприемлемое:<br/>
+            SAX &ndash; time: 5838 ms.<br/>
+            StAX &ndash; time: 10280 ms.<br/>
+            Оба решения оказались не применимы для данной задачи: время парсинга файла без группировки по группам и на объекты было выше, чем указано в условии задачи.
+            </p>
+            <p>
+                В своей практике мне периодически нужно решать задачи по парсингу файлов, где одно из требований &ndash; это скорость.
+                Подобные задачи я решаю самописными парсерами. Поскольку в этом задании данные имеют простую схему, сделать парсер такого файла
+                достаточно просто. Огромный минус такого решения &ndash; не универсальность. Если поставщик файла изменит порядок тегов либо добавит новый, парсер перестанет работать. Но в данном случае требуется минимальное время на выполнение, поэтому такое решение может быть использовано.
+            </p>
+            <p>
+                Считывание файла по строке:
+            <pre class="brush: java;">
+try (BufferedReader br = new BufferedReader(new FileReader("orders.xml"))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        if (line.startsWith("&lt;A")) {
+            final Order order = this.parse(line, true);
+            HashMap&lt;Integer, Order> list = orders.get(order.book);
+            if (list == null) {
+                list = new HashMap&lt;Integer, Order>();
+                orders.put(order.book, list);
+            }
+            list.put(order.id, order);
+        } else if (line.startsWith("&lt;D")) {
+            final Order order = this.parse(line, false);
+            orders.get(order.book).remove(order.id);
+        }
+    }
+}
+                    </pre>
+            </p>
+            Парсинг строки:
+            <pre class="brush: java;">
+                            public Order parse(final String text, boolean add) {
+                                boolean start = false;
+                                int pos = -1;
+                                String[] values = new String[5];
+                                int current = 0;
+                                for (int i=0;i!=text.length();++i) {
+                                    if (text.charAt(i) == '\"') {
+                                        if (start) {
+                                            values[current++] = text.substring(pos+1, i);
+                                            start = false;
+                                        } else {
+                                            start = true;
+                                        }
+                                        pos = i;
+                                    }
+                                }
+                                if (add) {
+                                    return new Order(
+                                            values[0],
+                                            "SELL".equals(values[1]) ? Order.Type.SELL : Order.Type.BUY,
+                                            Float.valueOf(values[2]),
+                                            Integer.valueOf(values[3]),
+                                            Integer.valueOf(values[4])
+                                    );
+                                } else {
+                                    return new Order(values[0], Order.Type.BUY, 0f, 0, Integer.valueOf(values[1]));
+                                }
+                            }
+                    </pre>
+            </p>
+            <p>
+                После прохождения этого состояния на выходе будет карта из составленных объектов Order.<br/>
+                Далее нам надо разобрать заявки на группы и произвести дальнейшее вычисление в отдельных потоках.
+                Для выполнения параллельного вычисления я использовал ExecuteService и Callable, Future конструкции.
+                Я выбрал именно эти конструкции, т. к. нужно дождаться, пока все вычисления закончатся.
+            <pre class="brush: java;">
+                        public void match() throws InterruptedException, ExecutionException {
+                            List&lt;Future&lt;Book>> futures = new ArrayList<>(list.size());
+                            for (final HashMap&lt;Integer, Order> orders : list.values()) {
+                            futures.add(pool.submit(new Callable&lt;Book>() {
+                                @Override
+                                public Book call() throws Exception {
+                                    Book book = new Book(orders.values());
+                                    book.calculate();
+                                    return book;
+                                }
+                                }));
+                                }
+                                for (Future&lt;Book> future : futures) {
+                                    future.get();
+                                }
+                            pool.shutdown();
+                        }
+                    </pre>
+            </p>
+            <p>
+                Далее в классе Book производится агрегация заявок с одинаковой ценой и сортировка, причем сортировку выполняет коллекция TreeMap. Поэтому важно очень хорошо разбираться в коллекциях.<br/>
+                После этого я могу получить биржевой стакан:
+            </p>
+            <pre class="brush: plain;">
+BUY 	PRICE SELL
+		101.3      70
+		100.9      86
+		100.8      70
+		100.7      46
+		100.6      88
+		100.5     800
+		100.4   10698
+		100.3  123328
+		100.2  454086
+		100.1 1024264
+		100.0 1484290
+		 99.9  469632
+		 99.8  445490
+		 99.7  404565
+		 99.6  365271
+		 99.5  310715
+		 99.4  255846
+		 99.3  205994
+		 99.2  151606
+		 99.1  112117
+		 99.0   76596
+		 98.9   50235
+		 98.8   31844
+		 98.7   20559
+		 98.6   13665
+		 98.5    6389
+		 98.4    3682
+		 98.3    2155
+		 98.2    1109
+		 98.1     778
+		 98.0     339
+		 97.9     193
+		 97.8       8
+		 97.6      44
+     87  98.8
+     58  99.0
+     37  99.2
+     16  99.3
+    194  99.4
+    465  99.5
+  10885  99.6
+ 122787  99.7
+ 451619  99.8
+1029027  99.9
+1475579 100.0
+ 465343 100.1
+ 439919 100.2
+ 413034 100.3
+ 367049 100.4
+ 320736 100.5
+ 255797 100.6
+ 199429 100.7
+ 154344 100.8
+ 108765 100.9
+  79794 101.0
+  51008 101.1
+  37026 101.2
+  20180 101.3
+  12335 101.4
+   5603 101.5
+   4175 101.6
+   1980 101.7
+    862 101.8
+    454 101.9
+    159 102.0
+    143 102.1
+                </pre>
+            <p>
+                Далее я решил поэкспериментировать и прогнать программу 100 раз подряд, чтобы получить средную выборку.<br/>
+                Диграмма приведена ниже. Время выполнения получилось где-то 5200 миллисекунд &ndash; это даже лучше, чем требуется в условиях задачи. Но в задании следует учесть соотвествующие позиции, о чем я расскажу во второй части.
+            </p>
+            <p>
+                <img src="../img/diagram.png" alt="image" width="430px"/>
+            </p>
+            <a target="_blank" href="https://github.com/peterarsentev/StocksImport">Исходный код</a>
+            </p>
+
+            <hr>
+
+            <!-- Blog Comments -->
+
+            <!--&lt;!&ndash; Comments Form &ndash;&gt;-->
+            <!--<div class="well">-->
+            <!--<h4>Оставить комментарий:</h4>-->
+            <!--<form role="form">-->
+            <!--<div class="form-group">-->
+            <!--<textarea class="form-control" rows="3"></textarea>-->
+            <!--</div>-->
+            <!--<button type="submit" class="btn btn-primary">Отправить</button>-->
+            <!--</form>-->
+            <!--</div>-->
+
+            <!--<hr>-->
+
+            <!--&lt;!&ndash; Posted Comments &ndash;&gt;-->
+
+            <!--&lt;!&ndash; Comment &ndash;&gt;-->
+            <!--<div class="media">-->
+            <!--<a class="pull-left" href="#">-->
+            <!--<img class="media-object" src="http://placehold.it/64x64" alt="">-->
+            <!--</a>-->
+            <!--<div class="media-body">-->
+            <!--<h4 class="media-heading">Start Bootstrap-->
+            <!--<small>August 25, 2014 at 9:30 PM</small>-->
+            <!--</h4>-->
+            <!--Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash; Comment &ndash;&gt;-->
+            <!--<div class="media">-->
+            <!--<a class="pull-left" href="#">-->
+            <!--<img class="media-object" src="http://placehold.it/64x64" alt="">-->
+            <!--</a>-->
+            <!--<div class="media-body">-->
+            <!--<h4 class="media-heading">Start Bootstrap-->
+            <!--<small>August 25, 2014 at 9:30 PM</small>-->
+            <!--</h4>-->
+            <!--Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.-->
+            <!--&lt;!&ndash; Nested Comment &ndash;&gt;-->
+            <!--<div class="media">-->
+            <!--<a class="pull-left" href="#">-->
+            <!--<img class="media-object" src="http://placehold.it/64x64" alt="">-->
+            <!--</a>-->
+            <!--<div class="media-body">-->
+            <!--<h4 class="media-heading">Nested Start Bootstrap-->
+            <!--<small>August 25, 2014 at 9:30 PM</small>-->
+            <!--</h4>-->
+            <!--Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; End Nested Comment &ndash;&gt;-->
+            <!--</div>-->
+            <!--</div>-->
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+</div>
+<!-- /.container -->
+
+</body>
+
+</html>
