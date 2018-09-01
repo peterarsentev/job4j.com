@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
+    <meta name="author" content="Job4j.ru">
+
+    <title>From Scratch to Employment, Java SE + EE</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/modern-business.css" rel="stylesheet">
+
+    <link href="../css/job4j.css" rel="stylesheet">
+
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/job4j.js?v=31052017"></script>
+    <script>
+        $(function () {
+            CONTEXT = '../';
+            $("#header").load(
+                CONTEXT + "header.html?v=31052017",
+                function() {
+                    initHeader();
+                    loadUser();
+                }
+            );
+            $("#footer").load("../footer.html?v=31052017");
+            $("#courses").load("courses.html");
+        });
+    </script>
+    <style>
+        .anchor {
+            display: block;
+            height: 100px; /*same height as header*/
+            margin-top: -100px; /*same height as header*/
+            visibility: hidden;
+        }
+
+        .nav-tabs {
+            border-bottom: 2px solid #DDD;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            border-width: 0;
+        }
+
+        .nav-tabs > li > a {
+            border: none;
+            color: #666;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+            border: none;
+            color: #4285F4 !important;
+            background: transparent;
+        }
+
+        .nav-tabs > li > a::after {
+            content: "";
+            background: #4285F4;
+            height: 2px;
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            bottom: -1px;
+            transition: all 250ms ease 0s;
+            transform: scale(0);
+        }
+
+        .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after {
+            transform: scale(1);
+        }
+
+        .tab-nav > li > a::after {
+            background: #21527d none repeat scroll 0% 0%;
+            color: #fff;
+        }
+
+        .tab-pane {
+            padding: 15px 0;
+        }
+
+        .tab-content {
+            padding: 20px
+        }
+
+        .panel-heading.panel-darkerblue {
+            background: #7bc3d1;
+            color: white;
+        }
+
+        .panel-footer.panel-darkerblue {
+            background: #7bc3d1;
+            color: white;
+        }
+
+        /*.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }*/
+        .table tbody > tr > td.vert-align {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div id="header"></div>
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom"
+     style="margin-top: 50px;background-color: #FFFFFF; border-color: #FFFFFF; z-index: 1" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <!--<ul class="nav nav-tabs" role="tablist">-->
+                        <!--<li role="presentation"><a href="#about">О курсе</a></li>-->
+                        <!--<li role="presentation"><a href="#packet">Пакеты обучения</a></li>-->
+                        <!--<li role="presentation"><a href="#level">Уровень слушателя</a></li>-->
+                        <!--<li role="presentation"><a href="#process">Как проходит</a></li>-->
+                        <!--<li role="presentation"><a href="#price">Время прохождения</a></li>-->
+                        <!--<li role="presentation"><a href="#discount">Скидки и бонусы</a></li>-->
+                        <!--<li role="presentation"><a href="#faq">FAQ</a></li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Page Content -->
+<div class="container" style="margin-top: 40px;">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                From Scratch to Employment, Java SE + EE
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Main</a>
+                </li>
+                <li class="active">Courses</li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-lg-8">
+            <span class="anchor" id="about"></span>
+            <h3>About the course</h3><br>
+            The main goal of the course is to provide students with the theoretical knowledge and practical skills of Java development, required to work as a <b>Java Developer.</b></br>
+            The course is focused on <strong>practical skills.</strong> Each task solution is checked <b>personally by the mentor.</b></br>
+            <br/> <br/>
+            The course represents itself a strong modular system, each module includes:
+            <ul>
+                <li>Practical tasks to strengthen the knowledge</li>
+                <li>Theory exams on studied topics. The knowledge is checked verbally and personally by the mentor</li>
+                <li>Solving test tasks from real interviews</li>
+                <li>Video instructions</li>
+                <li>Reference Guides</li>
+            </ul>
+            Moreover, at the end stage you will develop a final complex project containing all the libraries and frameworks mentioned in the course.
+            <br/>
+            <br/>
+        </div>
+
+        <div class="col-lg-4" style="margin-top: 60px">
+            <img class="img-responsive center-block" style="width: 400px" src="../img/dooder/boat.jpg" alt="">
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+            <div id="courses"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <span class="anchor" id="packet"></span>
+            <h3>Training Plans</h3>
+            <br/>
+
+            <!-- Package Start -->
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4 align="center">Plan "Start" - $175</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Instruments
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Maven, Gradle</li>
+                                        <li>jUnit</li>
+                                        <li>Git</li>
+                                        <li>IntelliJ Idea</li>
+                                        <li>Tomcat, JBoss EAP</li>
+                                        <li>PostgreSQL</li>
+                                        <li>ActiveMQ (JMS)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>Java Syntax</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>JVM</li>
+                                        <li>Data types</li>
+                                        <li>Conditional Statements</li>
+                                        <li>Loops</li>
+                                        <li>Arrays</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>Object-Oriented Programming</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Inheritance</li>
+                                        <li>Encapsulation</li>
+                                        <li>Polymorphism</li>
+                                        <li>Inner Classes</li>
+                                        <li>Abstract Classes</li>
+                                        <li>Exceptions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success flex-col">
+                                <div class="panel-heading">
+                                    <h4>Collections Lite</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Collections Framework</li>
+                                        <li>ArrayList</li>
+                                        <li>Sorting</li>
+                                        <li>Generic Programming</li>
+                                        <li>List, Set, Map Collections</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Standard -->
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 align="center">Plan "Standard" - $350</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>Collections Pro</h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Parametrized Types, Wildcard</li>
+                                        <li>Iterators</li>
+                                        <li>Concrete Collections:</li>
+                                        <ul>
+                                            <li>Lists</li>
+                                            <li>Stacks, Queues</li>
+                                            <li>Sets</li>
+                                            <li>Maps</li>
+                                            <li>Trees</li>
+                                        </ul>
+                                        <li>Hashcode, Equals</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Concurrency
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Synchronized and Asynchronized Operations</li>
+                                        <li>Resource synchronization</li>
+                                        <li>JMM</li>
+                                        <li>Low-Level blocking</li>
+                                        <li>Non-Blocking algorithms</li>
+                                        <li>Thread-Safe Collections</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        SQl, JDBC
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>General information about PostgreSQL databases</li>
+                                        <li>Basic SQL syntax</li>
+                                        <li>Select, Join, Outer Left, Right Queries</li>
+                                        <li>JDBC</li>
+                                        <li>Index-Organized Tables, Foreign Keys, Natural Keys</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Client-Server App
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>General scheme of Client-Server App</li>
+                                        <li>HTTP and HTTPS protocols</li>
+                                        <li>Servlet</li>
+                                        <li>JSP, MVC, JSLT</li>
+                                        <li>Filter, Session, Auth</li>
+                                        <li>Client languages: HTML, JS, CSS</li>
+                                        <li>Mockito testing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Professional -->
+
+            <div class="panel panel-info">
+                <div class="panel-heading panel-darkerblue">
+                    <h4 align="center">Plan "Professional" - $470</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-info">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        OOD
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>SOLID principles</li>
+                                        <li>Test-Driving Development(TDD)</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>Memory
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Garbage Collector</li>
+                                        <li>Garbage Collector Types</li>
+                                        <li>App profiling</li>
+                                        <li>Soft Weak References and Collections</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Functional Programming on Java 8
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Lambda</li>
+                                        <li>Stream API</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Input-Output, Socket
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>InputStreams, OutputStreams</li>
+                                        <li>Readers, Writers</li>
+                                        <li>Scanner</li>
+                                        <li>File Managers</li>
+                                        <li>Sockets</li>
+                                        <li>External File Sorting</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Hibernate
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>Basics of ORM. Hibernate</li>
+                                        <li>Hibernate Configuration</li>
+                                        <li>Binding of model representation and objects</li>
+                                        <li>Using HQL</li>
+                                        <li>Integration testing</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info flex-col">
+                                <div class="panel-heading panel-darkerblue">
+                                    <h4>
+                                        Spring
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Spring IoC</li>
+                                        <li>Spring HibernateTemplate</li>
+                                        <li>Spring Data</li>
+                                        <li>Spring MVC</li>
+                                        <li>Spring Security</li>
+                                        <li>Spring Test</li>
+                                        <li>Spring Boot</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Expert -->
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 align="center">Plan "Expert" - $400</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row row-flex row-flex-wrap">
+                        <div class="col-md-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading flex-col">
+                                    <h4>
+                                        Integration with other applications
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>EJB, JBoss RemoteEJB</li>
+                                        <li>RMI API</li>
+                                        <li>Web Service API</li>
+                                        <li>REST API</li>
+                                        <li>Asynchronized messages with JMS</li>
+                                        <li>WebSocket</li>
+                                        <li>Email</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading flex-col">
+                                    <h4>
+                                        Patterns
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <ul>
+                                        <li>Observer</li>
+                                        <li>Decorator</li>
+                                        <li>Factory</li>
+                                        <li>Singleton</li>
+                                        <li>Proxy</li>
+                                        <li>Adapter, Facade</li>
+                                        <li>Momento</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-primary flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Algorithms
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>Estimation of algorithm complexity</li>
+                                        <li>Sorting and Searching</li>
+                                        <li>Data Structures</li>
+                                        <li>Graphs</li>
+                                        <li>Combinatorial search and Euristic Methods</li>
+                                        <li>Dynamic programming</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-primary flex-col">
+                                <div class="panel-heading">
+                                    <h4>
+                                        Help to find a job
+                                    </h4>
+                                </div>
+                                <div class="panel-body flex-grow">
+                                    <p>
+                                    <ul>
+                                        <li>Help to write a resume</li>
+                                        <li>Cover Letter</li>
+                                        <li>Vacancies Selection</li>
+                                        <li>Prepare for Job Interview</li>
+                                        <li>Help to resolve test tasks</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4>Prepay the whole course (100%) and receive the discount of 10%</h4>
+            <h4>You can create your own training schedule including separate modules (one module price: $99).</h4>
+        </div>
+    </div>
+
+    <!-- Blog Information -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+            <span class="anchor" id="level"></span>
+            <h3>Requirements for students</h3>
+            To enter the course it is necessary to have a basic understanding of programming in general and knowledge of its basic
+            concepts (such as «variable», «function», «conditional statements», «cycles» and «arrays») in particular.<br/>
+            <br/>
+            <span class="anchor" id="process"></span>
+            <h3>The training process</h3>
+            Training is executed <strong>only individually</strong>. The entire training is totally adapted to a software development process in a real company.
+            Initially, a student gets access to Bug Tracker. This is the main useful tool at development of projects.
+            And this feature is described in details in the following <a href="https://www.youtube.com/watch?v=0jSJwQsDZB4">video</a>. Within the Bug Tracker a student creates a separate folder
+            for all training activities on tasks completion.
+            <br/><br/>
+            Structural plan of the training:<br/>
+            <ol>
+                <li>
+                    View a video-lesson. Video-lessons are available only to students.
+                    All video-lessons are stored on Yandex.Disk.<br>
+                    Each lesson is represented by one or two videos (duration: 30-60 minutes)
+                </li>
+                <li>
+                    Remember studied information. Draw a brief summary
+                </li>
+                <li>
+                    Perform tasks:
+                    <ol type="a">
+                        <li>Read the offered task. All tasks are on Bug Tracker.</li>
+                        <li>Think out logic of work. Schematically depict the process of executing the program.</li>
+                        <li>Implement the code. Create a JUnit test.</li>
+                        <li>Check correctness of work in the console by commands <i>mvn clean test</i></li>
+                        <li>Upload your code to repositories on GitHub</li>
+                        <li>Create a task on Bug Tracker. Specify the corresponding link in it to GitHub</li>
+                        <li>Perform the operation-comment with instructions of the responsible mentor.</li>
+                        <li>Within 1-2 days the task will be checked. The check notification will be sent to your email.</li>
+                        <li>If there are no further fixing instructions in the mentor's reply,
+                            the task can be closed and the student can solve the next task.
+                        </li>
+                        <li>
+                            If the student receives some mentor's fixing instructions, all errors must be corrected, after that the student starts again from the item (h).
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Successfully passing each module a student comes to the following section - test questions and a test task. This section simulates a real job interview.
+                    <br/>
+                    How to cope with it:
+                    <ol type="a">
+                        <li>Prepare answers to questions. The section contains a list of questions.</li>
+                        <li>Remember corresponding answers.</li>
+                        <li>Create a task in the tracker (specify date and time of a verbal exam).
+                        </li>
+                        <li>On the mentioned day the mentor calls to the student and verbally examined his/her knowledge.
+                        </li>
+                        <li>If the student answers at least 80% of the questions, then the interview is considered successful,
+                            otherwise the student prepares to repeated exams, until successful outcome.
+                        </li>
+                        <li>Successfully passing theory exams, the student performs the test task according to the scheme of Item 3.</li>
+                    </ol>
+                </li>
+                <li>
+                    During the training you will have some questions. All questions must be entered in the tracker with the name of the responsible person.
+                    During the corresponding day you will receive a reply with the time of consulting on Skype.
+                </li>
+            </ol>
+            <br/>
+            <strong>To summarize: </strong>the major part of the training course represents itself a text mode of communication.
+            The mentor calls a student to examine his/her theory knowledge verbally. Also all students can communicate
+            using common HipChat, in which separate chat rooms are divided topically by corresponding training modules.
+            In the chat you can discuss topics related to programming, the course in whole, demonstrate your solutions,
+            ask for solution advices and share useful information.
+
+            <br/><br/>
+            Upon the training course completion you will have a complex project with all the technologies listed in the course description.
+            Such a project is a significant asset to your resume. Also, when applying for a job, you can mention my contact info in your resume.
+            <br/>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="price"></span>
+                    <h3>Course duration</h3>
+                    The course duration is not connected with its cost. Any way, each student must master the entire course content. The length of the
+                    training depends on the initial level of knowledge of a particular student and corresponding educational abilities. For example,
+                    the stage «Start» - (2-3 lessons per week) can be completed for 2 months. But if you need more than 2 months, you pay nothing additionally,
+                    but continue to perfect yourself.
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="plan"></span>
+                    <h3 id="join">How to register for the course</h3>
+                    To apply for the course, please fill in the following
+                    <a target="_blank" href="https://yadi.sk/d/bKxxxLvvxbG2q">form</a> and send it to <strong>parsentev@yandex.ru</strong>.
+                    The next step is a primary interview on Skype.
+                    My skype id: <strong>petrarsentev</strong>.<br/><br/>
+                    Your actions in brief:<br/><br/>
+                    <ol>
+                        <li>
+                            Fill in the form and send it to the above mentioned email address. Please specify in your letter convenient day and time to talk with you on Skype.
+                            Pre-check your microphone headset.
+                        </li>
+                        <li>
+                            Add me on Skype
+                        </li>
+                    </ol>
+                    During the primary interview you can clarify any questions, tell more about yourself, plan a training schedule.
+                    Available time for the primary interview: 8:00 - 22:00 (Moscow time).
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="discount"></span>
+                    <h3>Discounts and bonuses</h3>
+                    <ul>
+                        <li>
+                            Place a post on the social network VK.com with the following text «I study here (see <a href="http://job4j.ru">http://job4j.ru</a>) - details on request». And enjoy a discount of $15.
+                        </li>
+                        <li>
+                            You can recommend me to a new student? Discount of $15 - to you and such student.
+                        </li>
+                        <li>
+                            By distributing any information about my course you can significantly reduce the cost of study.
+                        </li>
+                        <li>
+                            Upon course completion we help you to prepare a resume, a cover letter and to choose
+                        </li>
+                        <li>
+                            Optionally any student can take part in the development of the portal <b>job4j</b> and get real commercial experience.
+                        </li>
+                    </ul>
+                    <br/><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog FAQ -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <span class="anchor" id="faq"></span>
+            <h3>FAQ</h3>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse1">
+                                Will I study individually?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Training is executed only individually, including check task solution and answers control questions by voice.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse2">
+                                Will I have enough knowledge and skills from this course to get a job?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Yes, after completing the course you can get a position in Junior Java Developer.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse3">
+                                How long does it take to complete the course?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            The training time depends on your initial training and the chosen program. The maximum rate is closed to 8 months.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse4">
+                                What is the price of the course?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Plan "Start" - $175<br/>
+                            Plan "Standard" - $350<br/>
+                            Plan "Professional" - $470<br/>
+                            Plan "Expert" - $400<br/>
+                            Each plan is paid separately.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse5">
+                                When does the training begin?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Immediately after passing the initial interview.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse7">
+                                What forms of payment are possible?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            By online payment systems, by credit or debit cards.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse8">
+                                How can I apply for the course?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Fill in and send the form.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse9">
+                                How to contact you?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            email : parsentev@yandex.ru
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse10">
+                                Can I start the course not from the beginning level?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            No. Training should be from the first step.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse11">
+                                Do you issue any certificates upon course completion?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse11" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            You can specify my contact details for a recommendation for the employer.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse12">
+                                Can I ask additional questions or tasks?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse12" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Yes.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse13">
+                                Who is the mentor?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse13" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Now I'm training (Pyotr Arsentiev), and some mentors also helps me.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse14">
+                                How do you check my code?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse14" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            We use standards described in the documentation.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse15">
+                                Will you help me to find a job?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse15" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Yes.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse16">
+                                Do you help to write a resume?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse16" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Yes.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse17">
+                                Do you prepare students for job interviews?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse17" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Yes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- Footer -->
+    <div id="footer"></div>
+</div>
+</body>
+
+</html>
