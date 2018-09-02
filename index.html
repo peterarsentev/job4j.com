@@ -94,37 +94,109 @@
             background: #52d9f4;
         }
         /*End of styles for buttob*/
+
+        .home{
+            background: url('img/bg.jpg') 50% 75% no-repeat;
+            padding-top: 60px;
+            padding-bottom: 90px;
+            background-size: cover;
+        }
+        .home h1{
+            font-family: "Open Sans", sans-serif;
+            color: #fff;
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .home .item{
+            padding-left: 120px;
+            font-family: "Open Sans", sans-serif;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 300;
+        }
+        .home .item p{
+            margin-bottom: 80px
+        }
+        .home .btn{
+            padding: 10px 45px;
+            font-family: "Open Sans", sans-serif;
+            color: #fff;
+            font-size: 18px;
+            border: 2px solid #fff;
+            border-radius: 80px;
+        }
+        .home .btn:active,.home .btn:focus{
+            background-color: #6497a2;
+        }
+        .home .btn:hover{
+            background-color: rgba(255, 255, 255, .1);
+        }
+        .digits{
+            padding: 55px 0;
+            background-color: #73aebb;
+            color: #000;
+            font-family: "Open Sans", sans-serif;
+        }
+        .digits .item{
+            text-align: center;
+            font-size: 120px;
+            font-weight: 700
+        }
+        .digits .desc{
+            position: relative;
+            top: -40px;
+            left: -70px;
+            text-align: right;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 36px
+
+        }
+        .digits .desc .color{
+            padding: 7px 15px;
+            margin-right: -15px;
+            background-color: #fff;
+        }
+
+        @media (max-width: 991px) {
+            .home .item{
+                padding-left: 0;
+            }
+            .digits{overflow: hidden}
+            .digits .desc{
+                top: -40px;
+                left: 55px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
 <body>
 
 <div id="header"></div>
-<section style="background: #49c1dc; padding-top: 0; padding-bottom: 0;">
 
+<section class="home">
     <div class="container">
-
-        <!-- Main blog with picture and button start education -->
         <div class="row">
-            <div class = "col-md-12" style="background: #49c1dc;">
-                <div class="row">
-                    <div class="col-md-7">
-                        <p class="coolfont" style="font-size: 55px; font-weight: 400; padding-top: 20px">Learn Java and find a job<br/> together with Job4j!</p>
-                        <p class="coolfont" style="font-size: 22px; font-weight: 300; padding-top: 10px">
-                            Job4j - а portal for learning Java<br/>
-                            and finding a job from novice to professional.</p>
-                        <br/><br/>
-                        <p style="padding-left: 20px; padding-top: 10px; padding-bottom: 100px"><a href="#courses" class="btn btnstart pull-left btn-lg">
-                            START</a></p>
-                    </div>
-                    <div class="col-md-5">
-                        <img class="img-responsive pull-right" src="img/comp2.jpg" alt="" style="padding-top: 50px;">
-                    </div>
+            <div class="col-md-12">
+                <h1>Job4j 2.0</h1>
+                <div class="item">
+                    <p>
+                        <br/>
+                        Java Development Courses with Employment.
+                        <br> <br>
+                        Job4j - а portal for learning Java<br>
+                        and finding a job from novice to professional.<br>
+                    </p>
                 </div>
+                <a href="#courses" class="btn pull-left">START</a>
             </div>
         </div>
     </div>
 </section>
+
 <section>
     <div class="container">
         <!-- Blog "why job4j?" -->
@@ -132,7 +204,7 @@
 
             <div class="col-md-12" style="text-align: center">
                 <h1 class="coolfont" style="color: black">
-                    Why Job4j?
+                   Our benefits
                 </h1>
             </div>
 
@@ -211,14 +283,14 @@
                             <br/>
                             <h4>
                                 <i class="fa fa-fw fa-university"></i>
-                                Java step-by-step in sketch
+                                Java step-by-step in scratch
                             </h4>
                             <p>
                                 It is a short-crash course about programming in Java.
                                 This course consists from 14 lessons. Throughout the course,
                                 you will develop full app from scratch to the full project.
                                 You will start from simple tasks and go deeper throughout the next lessons.
-                                Topics: Java 8, Gradle, Git, TestNG, SQL, Servlet, JSP, Hibernate,
+                                Topics: Java 11, Gradle, Git, TestNG, SQL, Servlet, JSP, Hibernate,
                                 Spring (Boot, Data, Security), JAXB, SOAP, REST.
                             </p>
                         </div>
@@ -251,7 +323,7 @@
                             </h4>
                             <p>
                                 The course begins with the basics of Java syntax and smoothly proceeds
-                                to the topics of server development. Topics covered: Java 8, Maven, Git, JUnit,
+                                to the topics of server development. Topics covered: Java 11, Maven, Git, JUnit,
                                 SQL, Servlet, JSP, Hibernate, Spring, JAXB, SOAP, REST, JS, Angular.
                                 <strong>80% of students get a job within a week after the end of the course.
                                 More than half of the students successfully study on the course in parallel
