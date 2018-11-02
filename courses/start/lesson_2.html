@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="../../img/favorite.png"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
-    <meta name="author" content="Job4j.ru">
-
-    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
-
-    <!-- Bootstrap Core CSS -->
+    <meta name="description" content="Java for beginners. Java step-by-step in sketch. Java SE, Java EE.">
+    <meta name="author" content="Petr Arsentev">
+    <title>Learn Java and find a job for Junion and Senior</title>
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="../../css/modern-business.css" rel="stylesheet">
-
     <link href="../../css/job4j.css" rel="stylesheet">
     <link href="../../css/start.css" rel="stylesheet">
-
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,34 +34,6 @@
                     }
             );
             $("#footer").load("../../footer.html?v=31052017");
-            $("#courses").load("../courses.html");
-            $("#modal").load("modal.html");
-        });
-
-        <!-- Script for carousel -->
-        $(document).ready(function () {
-            $('#myCarousel').carousel({
-                interval: 0
-            });
-
-            var clickEvent = false;
-            $('#myCarousel').on('click', '.nav a', function () {
-                $('video').trigger('pause');
-                clickEvent = true;
-                $('.nav li').removeClass('active');
-                $(this).parent().addClass('active');
-            }).on('slid.bs.carousel', function (e) {
-                if (!clickEvent) {
-                    var count = $('.nav').children().length - 1;
-                    var current = $('.nav li.active');
-                    current.removeClass('active').next().addClass('active');
-                    var id = parseInt(current.data('slide-to'));
-                    if (count == id) {
-                        $('.nav li').first().addClass('active');
-                    }
-                }
-                clickEvent = false;
-            });
         });
     </script>
 
@@ -104,12 +67,12 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                Вводный курс "Java в аналогиях"
+                Lesson 2. General knowledge about Java 11, IDEA.
             </h1>
             <ol class="breadcrumb">
-                <li><a href="../../index.html">Главная</a>
+                <li><a href="../../index.html">Main</a>
                 </li>
-                <li class="active">Курсы</li>
+                <li class="active"><a href="../java_for_beginners.html">Java step-by-step in scratch</a></li>
             </ol>
         </div>
     </div>
@@ -118,225 +81,220 @@
 
     <div class="row">
         <div class="col-md-12">
-            <ul class="pagination">
-                <li style="width:55px"><a href="../java_beginner.html"><i class="fa fa-fw fa-home"></i></a></li>
-                <li><a href="lesson_1.html">«</a></li>
-                <li><a href="lesson_1.html">1</a></li>
-                <li class="active"><a href="#">2<span class="sr-only">(current)</span></a></li>
-                <li><a href="lesson_3.html">3</a></li>
-                <li><a href="lesson_4.html">4</a></li>
-                <li><a href="lesson_5.html">5</a></li>
-                <li><a href="lesson_6.html">6</a></li>
-                <li><a href="lesson_7.html">7</a></li>
-                <li><a href="lesson_8.html">8</a></li>
-                <li><a href="lesson_9.html">9</a></li>
-                <li><a href="lesson_10.html">10</a></li>
-                <li><a href="lesson_11.html">11</a></li>
-                <li><a href="lesson_12.html">12</a></li>
-                <li><a href="lesson_13.html">13</a></li>
-                <li><a href="lesson_14.html">14</a></li>
-                <li><a href="lesson_15.html">15</a></li>
-                <li><a href="lesson_3.html">»</a></li>
-            </ul>
+            <h3>Installing JDK 11</h3>
+            <br/>In this lesson, I am going to show you how you can setup the Java 11, how to install IDEA and how to make your first program.
+            <br/>First of all, we need a JDK. JDK is a tool for develop programs on Java lang.
+            <br/>I am going to use the latest version of JDK 11.
+            <br/>Let’s go to official website - <a href="https://jdk.java.net/11/">https://jdk.java.net/11/</a>
+            <br/>Important, you have to use OpenJDK, because Oracle JDK right now is a commercial product. You don’t need it.
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/download_jdk.png" width="500px" alt="">
+            <br/><br/>
+            <br/>Then, you need to choose your OS. In this course, I use Windows 7 in all lessons.
+            <br/>OpenJDK is distributed as zip archive, so you don’t need to install it.
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/choose_jdk.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/>When you downloaded the archive you need to unpack it to any folder.
+            <br/>I recommend you to create a directory – “C:\Tools” and unpack the JDK archive to there, like I did it.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/folder.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/>Now you need to tell your OS that you have a Java.
+            <br/>You need to go to My Computer > Properties > Advanced
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/advanced.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/>Then you need to click on Environment variables.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/properties.png" width="500px" alt="">
+            <br/><br/>
+
+            Then you need to add a new system variables.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/properties.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/java_home.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/>JAVA_HOME = c:\Tools\jdk-11.0.1\
+            <br/>Then you need to change the PATH variable.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/java_home_hightlight.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/>You need to add the text at the end of your values in this variable ;%JAVA_HOME%\bin
+
+            <br/>That is all. Right now you need to click OK and We can check your configuration.
+            <br/>For this reason you need to open command prompt.
+            <br/>Go to Main – Search – Type command prompt.
+            <br/>You need to execute follow command in command prompt
+            <br/>echo %PATH%
+            <br/>This command shows the value of PATH variable. How you can see on my screenshot it shows that I setup the JDK correctly.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/console_path.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/>echo %JAVA%
+            <br/>java  --version
+            <br/>javac  --version.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/console_java.png" width="500px" alt="">
+            <br/><br/>
+
+
+            <br/>The command ‘java’ runs Java Virtual Machine. We will use it to run your program.
+            <br/>The command ‘java’ needs to compile your source code to bity-code.
+
+            <h3>Installing IDEA</h3>
+
+            <br/>Right now we can go to the next step. it is to install the IDEA.
+            <br/>IDEA is a tool to develop program on Java lang.
+            <br/>Let’s go to official website and download the latest version of this tool.
+
+            <br/><a href="https://www.jetbrains.com/idea/download/">https://www.jetbrains.com/idea/download/</a>
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_site.png" width="500px" alt="">
+            <br/><br/>
+
+
+            <br/>There are two versions. One of it is a free. It is a community version. In this course, I will use only community version for all lessons.
+            <br/>You need to click on download button and just wait when a download process starts.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/download_idea.png" width="500px" alt="">
+            <br/><br/>
+
+
+            <br/>After you finished the downloading you need to install IDEA.
+            <br/>Now you need double-click on exe file and install process runs.
+            <br/>You need just lick next on such dialogs.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_1.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_2.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_3.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_4.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_5.png" width="500px" alt="">
+            <br/><br/>
+
+            After you install IDEA you can see such screen.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_6.png" width="500px" alt="">
+            <br/><br/>
+
+
+            <br/>Let’s create a new Project.
+            <br/>You need to click on ‘Create New project’.
+            <br/>Here  you need to select the JDK, You need to click on ‘New’ button
+            <br/>and select the directory with JDK 11.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_7.png" width="500px" alt="">
+            <br/><br/>
+
+
+            I did it in a directory ‘C:\Tools\JDK-11.0.1’
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_8.png" width="500px" alt="">
+            <br/><br/>
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_9.png" width="500px" alt="">
+            <br/><br/>
+
+
+            Then let’s create the new project from template. I choose ‘Java Hello world’
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_10.png" width="500px" alt="">
+            <br/><br/>
+
+            Then you need to choose the directory where IDEA will create the source code. I recommend you to use ‘C:\projects\job4j’ for this aim.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_11.png" width="500px" alt="">
+            <br/><br/>
+
+            When you click on Finish button, IDEA starts to initialize your project. First time,  It can take a few minutes.  Just wait when it finish.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_12.png" width="500px" alt="">
+            <br/><br/>
+
+            After IDEA finished the initialization process you can open the file src/Main.java.
+            This is our first program.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_13.png" width="500px" alt="">
+            <br/><br/>
+
+            Let’s compile and run it. You need to click on green button and choose Run ‘Main.main()’. IDEA compiles and run the code.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_14.png" width="500px" alt="">
+            <br/><br/>
+
+            IDEA opens the console where you can see the result of your first program. It prints ‘Hello World’.
+
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_2/idea_15.png" width="500px" alt="">
+            <br/><br/>
+
+            <h3>Exercises.</h3>
+            <br/>1.	Download and setup JDK 11.
+            <br/>2.	Download and install IDEA.
+            <br/>3.	Compile and run ‘Hello world’ program.
+            <br/>4.	Put the screenshot with output of  ‘Hello world’ program under with video.
+
         </div>
     </div>
-
-    <!-- Carousel block -->
-
-    <div class="panel panel-primary">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-
-                <!-- First slide -->
-
-                <div class="item active">
-                    <div class="col-md-12">
-                        <div class="row">
-
-                            <!-- Embedded video -->
-
-                            <div class="col-md-6" style="margin-left: -20px !important">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <video class="video-js vjs-default-skin embed-responsive-item" controls
-                                           preload="none"
-                                           data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }'
-                                           onclick="this.paused?this.play():this.pause();">
-                                        <source src="http://job4j.ru:8888/TrackStudio/video/7948/ae84b50d58634f6d0159e13e33736b44"
-                                                type="video/mp4"/>
-                                    </video>
-                                </div>
-                            </div>
-
-                            <!-- Video description -->
-
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h2>Урок №2. Установка инструментов.</h2> <br/>
-                                    <p>В этом уроке установим необходимые инструменты для прохождения
-                                        курса. <br/> <br/>
-                                        Инструменты:<br/>
-                                        <a href="http://www.oracle.com/technetwork/java/index-jsp-138363.html">Комплект разработчика JDK</a>
-                                        <br/>
-                                        <a href="https://www.jetbrains.com/idea/download/">Среда разработки IntelliJ IDEA</a>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End first slide -->
-
-                <!-- Second slide - Tests -->
-
-                <div class="item">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <!-- Test 1 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h2>Тест 1</h2> <br/>
-                                    <p>Что не входит в JDK: </p>
-                                    <ol><li>Компилятор Java</li>
-                                        <li>Документация</li>
-                                        <li>JRE</li>
-                                        <li>Интегрированная среда разработки</li>
-                                        <li>Стандартные библиотеки классов</li>
-                                    </ol>
-                                </div>
-                            </div>
-                            <!-- Test 2 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h2>Тест 2</h2> <br/>
-                                    <p>Кто разработал язык Java: </p>
-                                    <ol><li>Компания Google</li>
-                                        <li>Компания Oracle</li>
-                                        <li>Компания Sun Microsystems</li>
-                                        <li>Компания Microsoft</li>
-                                    </ol>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End second slide -->
-
-                <!-- Third slide - Tasks -->
-
-                <div class="item">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <!-- Task 1 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h3>Задача 1</h3>
-                                    <br/>
-                                    <p>В среде разработки IntelliJ Idea зайдите в:
-                                        <br/>File -> Settings -> Appearance & Behavior -> Appearance.  <br/>
-                                        В поле Theme выберите самый верхний вариант из списка и нажмите Apply.
-                                        Что при этом произойдёт?
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Task 2 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h3>Задача 2</h3>
-                                    <br/>
-                                    <p>В среде разработки IntelliJ Idea в левой панели дерева проекта раскройте текущий проект,
-                                        после этого нажав правой кнопкой мыши на папке src создайте Java класс HelloWorld.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End third slide -->
-
-                <!-- Fourth slide - Answers -->
-
-                <div class="item">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <!-- Test answers -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h3>Ответы:</h3> <br/>
-                                    <h4>Тест 1</h4>
-                                    <p>4 - интегрированная среда разработки не входит в комплект JDK.
-                                    </p> <br/>
-                                    <h4>Тест 2</h4>
-                                    <p>3 - Java была разработана компанией Sun Microsystems, которая впоследствии
-                                    была приобретена компанией Oracle</p>
-                                </div>
-                            </div>
-                            <!-- Tasks answers -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <br/><br/><br/><h4>Задача 1</h4>
-                                    <p>Интерфейс среды разработки станет в тёмных тонах, вы можете выбрать тот вариант,
-                                        который вам больше понравится</p>
-                                    <br/>
-                                    <!-- End of embedded code -->
-                                    <h4>Задача 2</h4>
-                                    <p>Процесс создания этого класса будет рассмотрен в начале 3-го урока</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End Item -->
-
-            </div><!-- End Carousel Inner -->
-
-            <!-- Caruosel switch slide bar -->
-            <ul class="nav nav-pills nav-justified">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#"><strong>Видео</strong></a>
-                </li>
-                <li data-target="#myCarousel" data-slide-to="1"><a href="#"><strong>Тесты</strong></a></li>
-                <li data-target="#myCarousel" data-slide-to="2"><a href="#"><strong>Задачи</strong></a></li>
-                <li data-target="#myCarousel" data-slide-to="3"><a href="#"><strong>Ответы</strong></a></li>
-            </ul>
-
-        </div>
-    </div>
-    <!-- End Carousel -->
 
     <!-- Blog literature -->
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <br/>
             <h3>
-                Список дополнительной литературы:
+                References
             </h3>
             <br/>
             <ol>
-                <li>Кэти Сьерра, Берт Бейтс - Head First Java / Изучаем Java (2012) - Глава 1.</li>
-                <li>Хорстманн К., Корнелл Г. - Java. Библиотека профессионала. Том 1. Основы (10-е издание). Глава 2
-                </li>
+                <li>Head First Java, 2nd Edition by Bert Bates, Kathy Sierra</li>
             </ol>
         </div>
-        <div class="col-md-3">
-            <a class="btn btn-success btn-outlined pull-right" href="#primary" data-toggle="modal">
-                <i class="glyphicon glyphicon-question-sign"></i><strong> Нужна помощь?</strong>
-            </a>
+        <div class="col-md-12 center-block">
+            <a class="btn btn-primary center-block" href="lesson_3.html">Lesson 3. Variables, types.</a>
         </div>
     </div>
-
-    <div id="modal"></div>
-
-<!-- Footer -->
-<div id="footer"></div>
+    <!-- Footer -->
+    <div id="footer"></div>
 </div>
 </body>
 

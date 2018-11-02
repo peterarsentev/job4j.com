@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="../../img/favorite.png"/>
+    <link rel="icon" type="image/png" href="img/favorite.png"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Обучение и трудоустройство Java-программистов от Junior до Senior">
-    <meta name="author" content="Job4j.ru">
-
-    <title>Обучение и трудоустройство Java-программистов от Junior до Senior</title>
-
-    <!-- Bootstrap Core CSS -->
+    <meta name="description" content="Java for beginners. Java step-by-step in sketch. Java SE, Java EE.">
+    <meta name="author" content="Petr Arsentev">
+    <title>Learn Java and find a job for Junion and Senior</title>
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="../../css/modern-business.css" rel="stylesheet">
-
     <link href="../../css/job4j.css" rel="stylesheet">
     <link href="../../css/start.css" rel="stylesheet">
-
     <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,34 +34,6 @@
                     }
             );
             $("#footer").load("../../footer.html?v=31052017");
-            $("#courses").load("../courses.html");
-            $("#modal").load("modal.html");
-        });
-
-        <!-- Script for carousel -->
-        $(document).ready(function () {
-            $('#myCarousel').carousel({
-                interval: 0
-            });
-
-            var clickEvent = false;
-            $('#myCarousel').on('click', '.nav a', function () {
-                $('video').trigger('pause');
-                clickEvent = true;
-                $('.nav li').removeClass('active');
-                $(this).parent().addClass('active');
-            }).on('slid.bs.carousel', function (e) {
-                if (!clickEvent) {
-                    var count = $('.nav').children().length - 1;
-                    var current = $('.nav li.active');
-                    current.removeClass('active').next().addClass('active');
-                    var id = parseInt(current.data('slide-to'));
-                    if (count == id) {
-                        $('.nav li').first().addClass('active');
-                    }
-                }
-                clickEvent = false;
-            });
         });
     </script>
 
@@ -104,12 +67,12 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                Вводный курс "Java в аналогиях"
+                Lesson 1. Introduction.
             </h1>
             <ol class="breadcrumb">
-                <li><a href="../../index.html">Главная</a>
+                <li><a href="../../index.html">Main</a>
                 </li>
-                <li class="active">Курсы</li>
+                <li class="active"><a href="../java_for_beginners.html">Java step-by-step in scratch</a></li>
             </ol>
         </div>
     </div>
@@ -118,225 +81,89 @@
 
     <div class="row">
         <div class="col-md-12">
-            <ul class="pagination">
-                <li style="width:55px"><a href="../java_beginner.html"><i class="fa fa-fw fa-home"></i></a></li>
-                <li class="disabled"><a href="#">«</a></li>
-                <li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
-                <li><a href="lesson_2.html">2</a></li>
-                <li><a href="lesson_3.html">3</a></li>
-                <li><a href="lesson_4.html">4</a></li>
-                <li><a href="lesson_5.html">5</a></li>
-                <li><a href="lesson_6.html">6</a></li>
-                <li><a href="lesson_7.html">7</a></li>
-                <li><a href="lesson_8.html">8</a></li>
-                <li><a href="lesson_9.html">9</a></li>
-                <li><a href="lesson_10.html">10</a></li>
-                <li><a href="lesson_11.html">11</a></li>
-                <li><a href="lesson_12.html">12</a></li>
-                <li><a href="lesson_13.html">13</a></li>
-                <li><a href="lesson_14.html">14</a></li>
-                <li><a href="lesson_15.html">15</a></li>
-                <li><a href="lesson_2.html">»</a></li>
-            </ul>
-        </div>
-    </div>
+            <h3>Introduction.</h3>
 
-    <!-- Carousel block -->
+            <img style="padding-bottom: 10px;" class="img-responsive center-block pt-3" src="../../img/lesson_1/intro.png" width="500px" alt="">
 
-    <div class="panel panel-primary">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <br/>Probable you already know something about programming and particularly about Java. I think you have read a few books about it.
+            But you still haven’t  got any programming jobs.
+            <br/>In addition, you just don’t try to get jobs, because you don’t feel confident
+            when you see the example of test tasks or when you look at interview questions list.
+            <br/>I know about it, because I was the same as you. Now let me introduce myself briefly and I will tell you more details about this course.
+            <br/>My name is Peter. I am a Java developer. I started my professional career in 2008
+            when I was a student at the local university. Since this year I have been involved in 12 different projects.
+            I had different positions in this projects, as core developer, senior developer, team lead, architecture.
+            Currently I have an own project, which help to hire new programmers in easy way.
+            So I have a huge amount of experience in programming and I want to share my skills with you.
+             
+            <h3>Roadmap to become a Java developer.</h3>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_1/roadmap.png" width="500px" alt="">
 
-                <!-- First slide -->
+            <br/>First, you need to identify the roadmap.  When I started my journey I have not idea what to do. I have read a book about Java. I was “Thinks in Java by Bruck Ekkel”. After I finished it I realize then I still don’t know what apps you need  Java. Then I made quickly research about what kind of app can be made by Java. I got that it was kind of website with large background ecosystem. I found some example of it. This is social nets like facebook.com and so on.
+            <br/>Then I realized that I read in this book, it is only a small piece of big cake. If you want to become a profession programmer I should read more books about it.
+            <br/><br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block" src="../../img/lesson_1/problem.png" width="500px" alt="">
 
-                <div class="item active">
-                    <div class="col-md-12">
-                        <div class="row">
+            <br/>I started to look more information about what I should read. I found too many of it. If I would read it all I had spent 10 years on it. At the least I was not sure about a final result.
+            <br/>I had a luck, because I had a friend how gave me piece of advices about what kind of technologies I should know about. What I got from this situation. It was then if you want to get a goal you should know to get there. It is a roadmap.
+            <br/>In this course I will give you my roadmap. We will go step by step from beginner topic of java to some complex topic. I’ll hold your hand along this way.
 
-                            <!-- Embedded video -->
+            <h3>Structure.</h3>
 
-                            <div class="col-md-6" style="margin-left: -20px !important">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <video class="video-js vjs-default-skin embed-responsive-item" controls
-                                           preload="none"
-                                           data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }'
-                                           onclick="this.paused?this.play():this.pause();">
-                                        <source src="http://job4j.ru:8888/TrackStudio/video/7793/ae84b50d58634f6d0159df02acba6117"
-                                                type="video/mp4"/>
-                                    </video>
-                                </div>
-                            </div>
+            I have taught people how to code a Java application already 3 years. I know the best way how you can become a profession programmer.
+            You should do 3 things.
+            <br/>
+            <br/>1.	You should get information.
+            <br/>2.	You should try to use it.
+            <br/>3.	You should get a feedback about your result.
+            <br/>You should do it repetitive.
+            <br/>Let’s look at the diagram below.
+            <br/>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block pt-3" src="../../img/lesson_1/schema.png" width="500px" alt="">
 
-                            <!-- Video description -->
+            For this reason I do my course the same way.
+            <br/>The full course consists from 31 lessons. Each lesson has 3 sections.
+            <br/>1.	Theoretical material.  It is essential information about particular topic. For example, conditional statements look statements.
+            <br/>2.	Practical. It is time to show how to use it in real project. I will show you full example with explanation. You should run this code and try to figure it out.
+            <br/>3.	Exercises. If you want to get the result, you should do each exercise.
+            <br/>4.	Feedback. You should put your code under this video. I promise I give a feedback to each comment.
+             
+            <h3>Conclusion.</h3>
 
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h2>Урок №1. Введение, мифы, зп, книги.</h2> <br/>
-                                    <p>
-                                        В этом уроке будет рассказано:<br/>
-                                        1. Для кого этот курс.<br/>
-                                        2. Мифы о зп, обучение за неделю.<br/>
-                                        3. Математика и физика для программиста.<br/>
-                                        4. Еще и английский.<br/>
-                                        5. Польза книг, рекомендуемая литература.<br/>
-                                    </p>
-                                </div>
-                            </div>
+            <img style="padding-bottom: 10px;" class="img-responsive center-block pt-3" src="../../img/lesson_1/conslution.png" width="500px" alt="">
 
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End first slide -->
-
-                <!-- Second slide - Tests -->
-
-                <div class="item">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <!-- Test 1 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h2>Тест 1</h2> <br/>
-                                    <p>Что такое программирование: </p>
-                                    <ol><li> это процесс создания компьютерных программ. </li>
-                                        <li> это интерактивная игра с сюжетной линией, которая заключается в решении
-                                            различных головоломок и логических заданий. </li>
-                                        <li> это интересный и увлекательный способ заработка денег</li>
-                                    </ol>
-                                </div>
-                            </div>
-                            <!-- Test 2 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h2>Тест 2</h2> <br/>
-                                    <p>Что нужно, чтобы стать программистом: </p>
-                                    <ol><li> интерес и желание изучать и писать программы.</li>
-                                        <li> читать предметную литературу.</li>
-                                        <li> общаться с другими программистами.</li>
-                                        <li> усердие и терпение. Программы иногда работают не так как хотелось бы.</li>
-                                    </ol>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End second slide -->
-
-                <!-- Third slide - Tasks -->
-
-                <div class="item">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <!-- Task 1 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h3>Задача 1</h3> <br/>
-                                    <p>Поставьте себе чёткую цель, подумайте какие шаги нужны, чтобы её достичь,
-                                        распределите эти шаги на временные промежутки, попробуйте проанализировать
-                                        сколько нужно времени заниматься в день или неделю. Это одна из самых важных
-                                        задач в курсе, от которой зависит ваш успех, поэтому не стоит её игнорировать.</p>
-                                </div>
-                            </div>
-                            <!-- Task 2 -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h3>Задача 2</h3> <br/>
-                                    <p>Программист должен постоянно развиваться. Хорошим источником знаний являются книги.
-                                        Ваша задача прочитать первую главу Head First Java и указать примеры виртуальных машин
-                                        из книги.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End third slide -->
-
-                <!-- Fourth slide - Answers -->
-
-                <div class="item">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <!-- Test answers -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <h3>Ответы:</h3> <br/>
-                                    <h4>Тест 1</h4>
-                                    <p>Правильный ответ 1. В первую очередь программирование это
-                                        процесс создания компьютерных программ, а номер 3 это скорее приятный бонус<br/>
-                                    </p>
-                                    <br/>
-                                    <h4>Тест 2</h4>
-                                    <p>Правильные ответы все</p>
-                                </div>
-                            </div>
-                            <!-- Tasks answers -->
-                            <div class="col-md-6">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <br/><h4>Задача 1</h4>
-                                    <p>Для этой задачи нет одного правильного ответа, т.к. каждый должен решить её сам для себя.
-                                        Например ставим цель устройство на работу и составить план чтения книг по Java и
-                                        прохождения курса, после этого регулярно отмечаем свой прогресс.</p>
-                                    <!-- End of embedded code -->
-                                    <h4>Задача 2</h4>
-                                    <p>Виртуальные машины в мобильных телефонах и пейджерах. В дальнейшем, в каждом уроке обращайте
-                                        внимание на список рекомендованной литературы и старайтесь читать в нескольких источниках.</p>
-                                    <p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="carousel-caption">
-                    </div>
-                </div><!-- End Item -->
-
-            </div><!-- End Carousel Inner -->
-
-            <!-- Caruosel switch slide bar -->
-            <ul class="nav nav-pills nav-justified">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#"><strong>Видео</strong></a>
-                </li>
-                <li data-target="#myCarousel" data-slide-to="1"><a href="#"><strong>Тесты</strong></a></li>
-                <li data-target="#myCarousel" data-slide-to="2"><a href="#"><strong>Задачи</strong></a></li>
-                <li data-target="#myCarousel" data-slide-to="3"><a href="#"><strong>Ответы</strong></a></li>
-            </ul>
+            <br/>We are going to finish out lesson. How I told above each lesson has exercises. It is time to give you’re the exercises. But in this time I will give you the right answer. I do it because you need right mindset. It is the same big key of success.
+            <br/>
+            <br/><strong>Exercise #1.</strong>You should define the reason why you want to learn Java.
+            <br/><strong>Answer #1.</strong> You want to become a profession programmer. This question is about your motivation. I saw many different answers. Some of them told me they want to create app which they can sell and earn money. Another told they want to create games which they can sell and earn money. So of all them just want to earn money. This is not sincere goal. For this reason all of them fault. Your passion should be to write a code not earn money. In such situation I’ll get a success.
+            <br/>
+            <br/><strong>Exercise #2.</strong>You should define the deadline.
+            <br/><strong>Answer #3.</strong> This course counts on 3-6 months. A profession programmer code every day. It is his passion. So if you do a code every day you will go as fast as can. But to be honest many of you will do practice hardly every one time then week. So it takes years to finish this course. This course consists from 31 lessons. I recommend to take a temp of this course by 3 day on each lesson. So you will keep it, it takes 3 months. It is the best temp.
+            <br/>
+            <br/><strong>Exercise #3.</strong>You should define the goal. It is a point how you can identify the process of this learning period.
+            <br/><strong>Answer #3.</strong> You get a job as java programmer. You should know when you can verify when you get a goal.
+            <br/>
 
         </div>
     </div>
-    <!-- End Carousel -->
 
     <!-- Blog literature -->
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <br/>
             <h3>
-                Список дополнительной литературы:
+                References
             </h3>
             <br/>
             <ol>
-                <li>Кэти Сьерра, Берт Бейтс - Head First Java / Изучаем Java (2012) - Глава 1.</li>
-                <li>Хорстманн К., Корнелл Г. - Java. Библиотека профессионала. Том 1. Основы (10-е издание). Глава 1.
-                </li>
-                <li>Герберт Шилдт - Java 8. Полное руководство. 9-е издание. Часть 1. Глава 1.</li>
+                <li>Head First Java, 2nd Edition by Bert Bates, Kathy Sierra</li>
             </ol>
         </div>
-        <div class="col-md-3">
-            <a class="btn btn-success btn-outlined pull-right" href="#primary" data-toggle="modal">
-                <i class="glyphicon glyphicon-question-sign"></i><strong> Нужна помощь?</strong>
-            </a>
+        <div class="col-md-12 center-block">
+            <a class="btn btn-primary center-block" href="lesson_2.html">Lesson 2. General knowledge about Java 11, IDEA.</a>
         </div>
     </div>
-
-    <div id="modal"></div>
-
     <!-- Footer -->
     <div id="footer"></div>
 </div>
