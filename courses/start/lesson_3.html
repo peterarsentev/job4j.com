@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/favorite.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Java for beginners. Java step-by-step in sketch. Java SE, Java EE.">
+    <meta name="author" content="Petr Arsentev">
+    <title>Learn Java and find a job for Junior and Senior</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/modern-business.css" rel="stylesheet">
+    <link href="../../css/job4j.css" rel="stylesheet">
+    <link href="../../css/start.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/job4j.js?v=14.11.2018"></script>
+    <script>
+        $(function () {
+            CONTEXT = '../../';
+            $("#header").load(
+                    CONTEXT + "header.html?v=14.11.2018",
+                    function() {
+                        initHeader();
+                        loadUser();
+                    }
+            );
+            $("#footer").load("../../footer.html?v=14.11.2018");
+        });
+    </script>
+
+
+    <style>
+        .anchor {
+            display: block;
+            height: 100px; /*same height as header*/
+            margin-top: -100px; /*same height as header*/
+            visibility: hidden;
+        }
+
+        /*.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }*/
+        .table tbody > tr > td.vert-align {
+            vertical-align: middle;
+        }
+
+        body {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="container" style="margin-top: 40px;">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Lesson 3.  Variables and data types.
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">Main</a>
+                </li>
+                <li class="active"><a href="../java_for_beginners.html">Java step-by-step in scratch</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Navigation bar-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>General schema.</h3>
+            <br/>In our real life, we use boxes for storing, transporting or sorting all of our things.
+            <br/>In programming, we use variables to store, transport and sort things. We can do the same things like in real life with variables: storing, transporting, sorting.
+            <br/>Let’s look at a schema, which shows how to declare and initialize variables.
+            <br/><br/>
+            <pre>[type] [name] [=] [value];</pre>
+            <br/>, where
+            <br/>type – It is a type of variable, like you use a jar for keeping liquid and you can’t use a paper box for it. A special type of container
+            <br/>name – it is identification of out variable, like you are human and you have a name. All variables must have names.
+            <br/>=  - it is a symbol, which is used for assigning the value to our variables.
+            <br/>value – it is our data, information.
+            <br/>Java is stronged type program language. It means that you must declare variable with particular type and store the same value with such type.
+            <br/>Now here is a simple:
+            <br/><br/>
+            <pre>
+public class Main {
+    public static void main(String[] args) {
+        int age = 25;
+        char sex = 'm';
+        boolean paid = false;
+        System.out.println("Age : " + age);
+        System.out.println("Sex : " + sex);
+        System.out.println("Paid : " + paid);
+    }
+}</pre>
+            <br/>Here I created three variables: age, sex, paid. Each variables have a type.
+            <br/>A variable can’t keep the value with other types, which it was created.
+            <br/>The follow code is wrong: int age = ‘m’;
+            <br/>Because a variable age has int type, and we can keep only numbers in this variable.
+            <br/>primitive and reference
+            <br/>Java has two groups of variables types: primitive and reference.
+            <br/>In this lesson I am going to talk only about primitive types.
+            <br/><br/>Java has 8 primitive types.
+            <br/>We can split it to 4 groups.
+            <ul>
+                <li>boolean, the type whose values are either true or false</li>
+                <li>char, the character type whose values are 16-bit Unicode characters</li>
+                <li>the integral types: byte, short, int, long</li>
+                <li>the floating-point types: float, double</li>
+            </ul>
+
+            <h3> Arithmetical operators.</h3>
+            <br/>We can use all arithmetical operators with primitive types.
+            <br/>Addition.
+            <br/><br/><pre>
+int first = 10;
+int second = 15;
+int result = first + second;
+System.out.println("Result : " + result);</pre>
+            <br/>Here you can see how we calculate the value and assign in directly to new variables
+            <br/><br/><pre>int result = first + second;</pre>
+            <br/>Subtraction.
+            <br/><br/><pre>
+int first = 10;
+int second = 15;
+int result = first - second;
+System.out.println("Result : " + result);
+</pre>
+            Divide
+            <br/><br/>
+<pre>
+int first = 4;
+int second = 2;
+int result = first / second;
+System.out.println("Result : " + result);
+</pre>
+            <br/>Multiplication.
+            <br/><br/><pre>
+int first = 10;
+int second = 15;
+int result = first * second;
+System.out.println("Result : " + result);
+</pre>
+            <h3>Reassign the values.</h3>
+            <br/>One interesting thing about variables is reassigning. We don’t have such operation in mathematic.
+            <br/>
+            <br/>Let’s consider that I need to increment the value on one.
+            <br/>
+            <br/>I can do in Java like this.
+            <br/>
+<pre>
+int count = 0;
+count = count + 1;
+System.out.println("Count : " + count);
+</pre>
+            <br/>
+            <pre>count = count + 1;</pre> Java reads the value from count variable. Then it adds an one. Then it writes the value to variables count.
+            <br/>
+            <br/>Java has simplified form of such expression:
+            <br/>
+            <pre>count += 10;</pre>
+            <br/>it is the same like count = count + 10;
+            <br/>
+            <br/>If we talk only increment or decrement on one, you can use such simplified form.
+            <br/>
+            <pre>count++; count--;</pre>
+            <br/>
+
+            <h3>Local-Variable Type Inference</h3>
+
+
+            <br/>Java 10 introduce a new simplified form of declare variable type.
+            <br/>
+            <br/>Let’s consider the follow code;
+            <br/>
+<pre>
+var price = 10.99;
+System.out.println("Price : " + price);
+</pre>
+            <br/>Java extracts the type variable from value.
+            <br/>
+            <br/>You can’t use such form if you don’t assign value.
+            <br/>
+            <br/>Wrong!
+            <br/>
+<pre>
+var price;
+price = 10.99;
+</pre>
+            <br/>Let’s rewrite the first sample with summation.
+<pre>
+var first = 10;
+var second = 15;
+var result = first + second;
+System.out.println("Result : " + result);
+</pre>
+            <br/>I will tell about this feature more in the next lessons.
+
+            <h3>Exercises.</h3>
+            <br/>Write code which will calculate the average salary in years and print it to the console.
+            <br/>Create the variables and give the name of each month.
+            <br/>Calculate the average amount.
+            <br/>Print it to the console.
+            <br/>Input: 23, 43, 50, 52, 40, 12, 40, 50, 40, 50.
+            <br/>
+            <br/>
+            <br/>2.	Implement mathematical function.
+            <br/>F(x) = a * x + c;
+            <br/>Calculate the value of F(x) for x = 4, when a = 3 and c equals 2;
+            <br/>Result should be printed in console.
+        </div>
+    </div>
+
+    <!-- Blog literature -->
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+            <h3>
+                References
+            </h3>
+            <br/>
+            <ol>
+                <li>Head First Java, 2nd Edition by Bert Bates, Kathy Sierra</li>
+            </ol>
+        </div>
+        <!--<div class="col-md-12 center-block">-->
+            <!--<a class="btn btn-primary center-block" href="lesson_4.html">Lesson 4. General knowledge about Java 11, IDEA.</a>-->
+        <!--</div>-->
+    </div>
+    <!-- Footer -->
+    <div id="footer"></div>
+</div>
+</body>
+
+</html>
